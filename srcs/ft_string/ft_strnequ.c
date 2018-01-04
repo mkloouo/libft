@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/30 16:10:54 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:17:23 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+int						ft_strnequ(const char *s1, const char *s2, size_t n)
+{
+	size_t				i;
 
-#endif
+	i = 0;
+	if (s1 && s2)
+	{
+		while (s1[i] != '\0' && s1[i] == s2[i] && i < n)
+			i++;
+		if (i == n)
+			return ((s1[i - 1] - s2[i - 1] == 0 ? (1) : (0)));
+		else
+			return ((s1[i] - s2[i]) == 0 ? (1) : (0));
+	}
+	return (0);
+}

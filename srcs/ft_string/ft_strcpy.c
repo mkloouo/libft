@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 13:11:12 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:15:18 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
-
-#endif
+char					*ft_strcpy(char *dst, const char *src)
+{
+	dst = ft_memcpy(dst, src, ft_strlen(src) + 1);
+	return (dst);
+}

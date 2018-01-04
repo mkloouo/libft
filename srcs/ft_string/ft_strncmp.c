@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 15:52:03 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:34:35 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+int						ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned			char u1;
+	unsigned			char u2;
 
-#endif
+	while (n-- > 0)
+	{
+		u1 = *s1++;
+		u2 = *s2++;
+		if (u1 != u2)
+			return (u1 - u2);
+		if (u1 == '\0')
+			return (0);
+	}
+	return (0);
+}

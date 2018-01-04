@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 17:52:20 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:15:06 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
-
-#endif
+void					ft_strclr(char *s)
+{
+	if (s)
+	{
+		while (*s != '\0')
+			*s++ = '\0';
+	}
+}

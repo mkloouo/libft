@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/30 15:45:09 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:15:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+void					ft_striteri(char *str, void (*f)(unsigned int, char*))
+{
+	int					i;
 
-#endif
+	i = 0;
+	if (str && f)
+	{
+		while (str[i] != '\0')
+		{
+			f(i, (str + i));
+			i++;
+		}
+	}
+}

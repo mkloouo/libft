@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/04 05:43:58 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:45:56 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_CTYPE_H
+# define FT_CTYPE_H
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+/*
+** Char library.
+*/
+
+int						ft_isspace(int c);
+int						ft_isdigit(int c);
+int						ft_isalpha(int c);
+int						ft_isalnum(int c);
+int						ft_isascii(int c);
+int						ft_isprint(int c);
+int						ft_isupper(int c);
+int						ft_islower(int c);
+
+int						ft_tolower(int c);
+int						ft_toupper(int c);
 
 #endif

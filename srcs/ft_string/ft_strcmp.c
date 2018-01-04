@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 16:51:52 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:33:56 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+int						ft_strcmp(const char *s1, const char *s2)
+{
+	unsigned char		*ptr1;
+	unsigned char		*ptr2;
+	size_t				i;
 
-#endif
+	i = 0;
+	ptr1 = (unsigned char*)s1;
+	ptr2 = (unsigned char*)s2;
+	while (ptr1[i] == ptr2[i] && ptr1[i] != '\0')
+		i++;
+	return (ptr1[i] - ptr2[i]);
+}

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:45:59 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 12:26:59 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/04 05:14:49 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_string.h"
 
-# include "ft_list.h"
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_stdlib.h"
-# include "ft_ctype.h"
+void					*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char		*temp;
 
-#endif
+	temp = (unsigned char*)ft_memalloc(len);
+	if (temp)
+	{
+		temp = ft_memcpy(temp, src, len);
+		dst = ft_memcpy(dst, temp, len);
+	}
+	return (dst);
+}
