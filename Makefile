@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 03:04:32 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/04 05:54:53 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/04 05:58:25 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,11 +49,10 @@ re: fclean all
 c: clean
 f: fclean
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) | $(OBJS_DIRS)
 	@echo "Finish object files compilation process."
 	@$(AR) $(ARFLAGS) $@ $^
 	@echo "Make static library file."
-$(OBJS): | $(OBJS_DIRS)
 $(OBJS_DIRS):
 	@mkdir -p $@
 	@echo "Make objects directory."
