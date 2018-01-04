@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 14:21:18 by modnosum          #+#    #+#             */
-/*   Updated: 2017/12/04 06:58:10 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:32:53 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char			*ft_strstr(const char *haystack, const char *needle)
 {

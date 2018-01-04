@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:45:09 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:15:41 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:20:50 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ void					ft_striteri(char *str, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (str && f)
-	{
-		while (str[i] != '\0')
+		while (str[i])
 		{
 			f(i, (str + i));
 			i++;
 		}
-	}
 }

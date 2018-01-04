@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:30:42 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:15:59 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:24:34 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t					ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if ((n = (size - dst_len)) <= 0)
 		return (src_len + size);
-	while (src[i] != 0 && --n > 0)
+	while (src[i] && --n)
 	{
 		dst[i] = src[i];
 		i++;

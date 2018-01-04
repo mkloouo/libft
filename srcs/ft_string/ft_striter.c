@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:43:43 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:15:36 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:20:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void					ft_striter(char *str, void (*f)(char *))
 {
 	if (str && f)
-		while (*str != '\0')
+		while (*str)
 			f(str++);
 }

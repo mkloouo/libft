@@ -6,10 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:26:59 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:14:49 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:16:04 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stdlib.h"
 #include "ft_string.h"
 
 void					*ft_memmove(void *dst, const void *src, size_t len)

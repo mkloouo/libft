@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 14:02:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:34:08 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:24:55 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t					ft_strlen(const char *str)
 	size_t				len;
 
 	len = 0;
-	while (*str++ != '\0')
+	while (*str++)
 		len++;
 	return (len);
 }

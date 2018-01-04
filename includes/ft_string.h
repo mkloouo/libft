@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 04:51:34 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:46:01 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:42:08 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 /*
 ** String library realization with some other string-like functions.
 */
+
+/*
+** string.h is for size_t import.
+*/
+# include <string.h>
 
 /*
 ** More of a memory management functions.

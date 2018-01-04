@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:25:53 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:34:25 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:28:06 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char					*ft_strncat(char *s1, const char *s2, size_t n)
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	ft_strncpy(&s1[len1], s2, ((len2 < n) ? len2 : n));
-	s1[len1 + ((len2 < n) ? len2 : n)] = '\0';
+	s1[len1 + ((len2 < n) ? len2 : n)] = 0;
 	return (s1);
 }

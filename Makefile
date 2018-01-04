@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 03:04:32 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/04 05:58:25 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/04 19:31:56 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,12 @@ OBJS_DIRS := $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(SRCS_DIRS))
 
 SRCS := $(shell find $(SRC_DIR) -type f)
 OBJS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SRCS:.$(SRC_EXT)=.$(OBJ_EXT)))
+INCS := $(shell find $(INC_DIR) -type f)
 
-$(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT)
+$(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY: all clean fclean re c f
+.PHONY: all clean fclean re norm f c n
 
 all: $(NAME)
 clean:
@@ -46,13 +47,16 @@ fclean: clean
 	@$(RM) -fr $(NAME)
 	@echo "Remove library."
 re: fclean all
+norm: $(SRCS) $(INCS)
+	@norminette $^
 c: clean
 f: fclean
+n: norm
 
-$(NAME): $(OBJS) | $(OBJS_DIRS)
+$(NAME): $(OBJS)
 	@echo "Finish object files compilation process."
 	@$(AR) $(ARFLAGS) $@ $^
 	@echo "Make static library file."
 $(OBJS_DIRS):
 	@mkdir -p $@
-	@echo "Make objects directory."
+	@echo "Make $@ directory."

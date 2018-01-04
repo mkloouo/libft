@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:52:03 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:34:35 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:28:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned			char u1;
 	unsigned			char u2;
 
-	while (n-- > 0)
+	while (n--)
 	{
 		u1 = *s1++;
 		u2 = *s2++;

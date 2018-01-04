@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 18:31:27 by modnosum          #+#    #+#             */
-/*   Updated: 2017/12/04 06:34:14 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:34:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 #define IS_WHITESPACE(Value) (Value == ' ' || Value == '\n' || Value == '\t')
 

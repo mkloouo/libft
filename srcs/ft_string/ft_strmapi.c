@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:51:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:35:10 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:27:38 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char))
 	char				*mapped_str;
 	int					i;
 
-	if (!str || !f)
-		return (NULL);
-	if ((mapped_str = ft_strnew(ft_strlen(str))))
-	{
-		i = 0;
-		while (str[i] != '\0')
+	if (str && f)
+		if ((mapped_str = ft_strnew(ft_strlen(str))))
 		{
-			mapped_str[i] = f(i, str[i]);
-			i++;
+			i = 0;
+			while (str[i])
+			{
+				mapped_str[i] = f(i, str[i]);
+				i++;
+			}
+			return (mapped_str);
 		}
-	}
-	return (mapped_str);
+	return (NULL);
 }

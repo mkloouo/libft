@@ -6,21 +6,15 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:49:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:15:21 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:19:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_stdlib.h"
 #include "ft_string.h"
 
 void					ft_strdel(char **as)
 {
-	if (as)
-	{
-		if (*as)
-		{
-			free(*as);
-			*as = NULL;
-		}
-	}
+	if (as && *as)
+		ft_memdel((void**)as);
 }

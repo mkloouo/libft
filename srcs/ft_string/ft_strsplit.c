@@ -6,10 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 23:24:38 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/04 05:36:00 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:16:47 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stdlib.h"
 #include "ft_string.h"
 
 static int				count_words(char *s, char c)
