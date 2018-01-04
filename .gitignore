@@ -1,2 +1,4 @@
-.vscode
+# Ignore all object files
 *.o
+# Ignore VS Code config
+.vscode
