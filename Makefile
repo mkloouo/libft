@@ -6,57 +6,72 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 03:04:32 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/04 19:31:56 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/16 07:24:00 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I$(INC_DIR)/
+CFLAGS = -Wall -Werror -Wextra -I$(INCDIR)/
 
-AR = ar
-ARFLAGS = -crs
+RM = rm -rf
+AR = ar -crs
 
-NAME = libft.a
+TARGET = libft.a
 
-LIB_EXT = a
-SRC_EXT = c
-OBJ_EXT = o
-INC_EXT = h
+TEST := test.c
 
-SRC_DIR = srcs
-INC_DIR = includes
-OBJ_DIR = objects
+SRCDIR := srcs
+OBJDIR := objs
+INCDIR := includes
 
-SRCS_DIRS := $(shell find $(SRC_DIR) -type d)
-OBJS_DIRS := $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(SRCS_DIRS))
+SRCS := $(shell find $(SRCDIR) -type f -name "*.c")
+OBJS := $(patsubst $(SRCDIR)%,$(OBJDIR)%,$(SRCS:.c=.o))
+INCS := $(shell find $(INCDIR) -type f -name "*.h")
 
-SRCS := $(shell find $(SRC_DIR) -type f)
-OBJS := $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SRCS:.$(SRC_EXT)=.$(OBJ_EXT)))
-INCS := $(shell find $(INC_DIR) -type f)
+.PHONY: all re fclean clean test norm f c n t
 
-$(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(OBJS_DIRS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY: all clean fclean re norm f c n
-
-all: $(NAME)
+# Typed rules
+all: $(TARGET)
 clean:
-	@$(RM) -fr $(OBJ_DIR)
-	@echo "Remove objects dir."
+	@find . -type f -name "*~" -delete
+	@echo "[$(TARGET)] Removed temporary (~) files."
+	@$(RM) test
+	@echo "[$(TARGET)] Removed test executive."
+	@$(RM) $(OBJDIR)
+	@echo "[$(TARGET)] Removed object files."
 fclean: clean
-	@$(RM) -fr $(NAME)
-	@echo "Remove library."
-re: fclean all
+	@$(RM) $(TARGET)
+	@echo "[$(TARGET)] Removed library file."
+re: fclean $(TARGET)
 norm: $(SRCS) $(INCS)
 	@norminette $^
-c: clean
-f: fclean
-n: norm
+	@echo "[$(TARGET)] Done 42 Norm check."
+test: $(TEST) $(TARGET)
+	@$(CC) $(CFLAGS) -o $@ $^
+	@echo "[$(TARGET)] Created test file."
 
-$(NAME): $(OBJS)
-	@echo "Finish object files compilation process."
-	@$(AR) $(ARFLAGS) $@ $^
-	@echo "Make static library file."
-$(OBJS_DIRS):
+# Named rules
+$(TARGET): $(OBJS)
+	@echo "[$@] Compiled source files."
+	@$(AR) $@ $^
+	@echo "[$@] Build library."
+$(OBJDIR):
 	@mkdir -p $@
-	@echo "Make $@ directory."
+	@echo "[$(TARGET)] Made objects directory."
+
+# Shortcut rules
+f:
+	@echo "[$(TARGET)] Using fclean shortcut."
+	@$(MAKE) fclean
+c:
+	@echo "[$(TARGET)] Using clean shortcut."
+	@$(MAKE) clean
+n:
+	@echo "[$(TARGET)] Using norm shortcut."
+	@$(MAKE) norm
+t:
+	@echo "[$(TARGET)] Using test shortcut."
+	@$(MAKE) test
