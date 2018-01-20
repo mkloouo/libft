@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 15:45:31 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/20 15:54:06 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/20 21:07:01 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,13 +14,12 @@ ifndef COLORS
 
 COLORS						:=
 
-RES							:= "\\033[0m"
-RED							:= "\\033[31m"
-GREEN						:= "\\033[32m"
-BLUE						:= "\\033[34m"
-MAGENTA						:= "\\033[35m"
-CYAN						:= "\\033[36m"
-
+RES							:= "\x1B[0m"
+RED							:= "\x1B[31m"
+GREEN						:= "\x1B[32m"
+BLUE						:= "\x1B[34m"
+MAGENTA						:= "\x1B[35m"
+CYAN						:= "\x1B[36m"
 CARG1						= $(1)$(2)$(RES)
 CARG2						= $(call CARG1, $(1), $(2)) $(call CARG1,\
 								$(3), $(4))
