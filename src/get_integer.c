@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   get_integer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 11:47:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/16 06:25:12 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/16 15:11:12 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/16 15:16:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void					ft_putendl_fd(const char *s, int fd)
+int						get_integer(char *prompt)
 {
-	if (s)
-		ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char				*data;
+
+	ft_putstr(prompt);
+	data = NULL;
+	get_next_line(0, &data);
+	return (ft_atoi(data));
 }

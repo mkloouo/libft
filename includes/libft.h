@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/16 06:56:59 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/20 20:04:39 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 ** Returns: -1, 0, 1 on error, EOF or more lines to read respectively.
 */
 int						get_next_line(const int fd, char **line);
+
+int						get_integer(char *prompt);
+char					*get_string(char *prompt);
 
 void					ft_putchar(char c);
 void					ft_putchar_fd(char c, int fd);
@@ -69,6 +72,8 @@ void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+t_list					*ft_lstat(t_list *alst, unsigned int index);
+
 /*
 ** Standart library.
 */
@@ -79,6 +84,7 @@ void					ft_memdel(void **ap);
 char					*ft_itoa(int n);
 char					*ft_itoa_base(int value, int base);
 int						ft_atoi(const char *str);
+double					ft_atod(const char *str);
 
 /*
 ** String library realization with some other string-like functions.

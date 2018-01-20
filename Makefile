@@ -1,77 +1,57 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
+#    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/04 03:04:32 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/16 07:24:00 by modnosum         ###   ########.fr        #
+#    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
+#    Updated: 2018/01/20 17:15:59 by modnosum         ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I$(INCDIR)/
+# Import da global variables and coloring
+include libft.mk
+include colors.mk
 
-RM = rm -rf
-AR = ar -crs
+# Compiler Configuration
+CC						= gcc
+CFLAGS					= -Wall -Wextra -Werror -pedantic -std=c99
 
-TARGET = libft.a
+# Directories
+SRC_DIR					= ./src
+OBJ_DIR					= ./obj
+INC_DIR					= ./includes
 
-TEST := test.c
+# Source and object lists
+SRC						:= $(shell find $(SRC_DIR) -type f -name "*.c")
+OBJ						:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRC:.c=.o))
+INC						:= $(shell find $(INC_DIR) -type f -name "*.h")
 
-SRCDIR := srcs
-OBJDIR := objs
-INCDIR := includes
-
-SRCS := $(shell find $(SRCDIR) -type f -name "*.c")
-OBJS := $(patsubst $(SRCDIR)%,$(OBJDIR)%,$(SRCS:.c=.o))
-INCS := $(shell find $(INCDIR) -type f -name "*.h")
-
-.PHONY: all re fclean clean test norm f c n t
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-# Typed rules
-all: $(TARGET)
-clean:
-	@find . -type f -name "*~" -delete
-	@echo "[$(TARGET)] Removed temporary (~) files."
-	@$(RM) test
-	@echo "[$(TARGET)] Removed test executive."
-	@$(RM) $(OBJDIR)
-	@echo "[$(TARGET)] Removed object files."
-fclean: clean
-	@$(RM) $(TARGET)
-	@echo "[$(TARGET)] Removed library file."
-re: fclean $(TARGET)
-norm: $(SRCS) $(INCS)
-	@norminette $^
-	@echo "[$(TARGET)] Done 42 Norm check."
-test: $(TEST) $(TARGET)
-	@$(CC) $(CFLAGS) -o $@ $^
-	@echo "[$(TARGET)] Created test file."
+# Phony rules
+.PHONY: all clean fclean re norm
 
 # Named rules
-$(TARGET): $(OBJS)
-	@echo "[$@] Compiled source files."
-	@$(AR) $@ $^
-	@echo "[$@] Build library."
-$(OBJDIR):
-	@mkdir -p $@
-	@echo "[$(TARGET)] Made objects directory."
-
-# Shortcut rules
-f:
-	@echo "[$(TARGET)] Using fclean shortcut."
+all: $(FT_NAME)
+clean:
+	@rm -fR $(OBJ_DIR)
+	@echo $(call CARG1, $(RED), "[$(FT_NAME)] delete obj directory.")
+fclean: clean
+	@rm -fR $(FT_NAME)
+	@echo $(call CARG1, $(RED), "[$(FT_NAME)] delete library.")
+re:
 	@$(MAKE) fclean
-c:
-	@echo "[$(TARGET)] Using clean shortcut."
-	@$(MAKE) clean
-n:
-	@echo "[$(TARGET)] Using norm shortcut."
-	@$(MAKE) norm
-t:
-	@echo "[$(TARGET)] Using test shortcut."
-	@$(MAKE) test
+	@$(MAKE) all
+norm: $(SRC) $(INC)
+	@norminette $^
+
+# Variable rules
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@echo $(call CARG1, $(MAGENTA), "[$(FT_NAME)] Start compilation.")
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(FT_INC) -o $@ -c $<
+	@echo $(call CARG2, $(MAGENTA), "[$(FT_NAME)] Compiling: ", $(CYAN), $<)
+$(FT_NAME): $(OBJ)
+	@ar crs $@ $^
+	@echo $(call CARG1, $(MAGENTA), "[$(FT_NAME)] Library complete.")
