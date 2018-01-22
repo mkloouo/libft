@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:26:59 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/16 06:25:22 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/22 21:57:52 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void					*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		temp = ft_memcpy(temp, src, len);
 		dst = ft_memcpy(dst, temp, len);
+		ft_memdel((void**)&temp);
 	}
 	return (dst);
 }

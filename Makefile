@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/20 17:15:59 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/22 19:35:16 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -29,7 +29,7 @@ OBJ						:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRC:.c=.o))
 INC						:= $(shell find $(INC_DIR) -type f -name "*.h")
 
 # Phony rules
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re norm c f n
 
 # Named rules
 all: $(FT_NAME)
@@ -44,6 +44,11 @@ re:
 	@$(MAKE) all
 norm: $(SRC) $(INC)
 	@norminette $^
+
+# Shortcuts
+c: clean
+f: fclean
+n: norm
 
 # Variable rules
 $(OBJ_DIR):
