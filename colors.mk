@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 15:45:31 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/22 22:12:10 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/24 10:16:22 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,12 +14,19 @@ ifndef COLORS
 
 COLORS						:=
 
-RES							:= "\\033[0m"
-RED							:= "\\033[31m"
-GREEN						:= "\\033[32m"
-BLUE						:= "\\033[34m"
-MAGENTA						:= "\\033[35m"
-CYAN						:= "\\033[36m"
+ifeq ($(shell uname), Darwin)
+ESC							:= "\\033"
+endif
+ifeq ($(shell uname), Linux)
+ESC							:= "\x1B"
+endif
+
+RES							:= $(ESC)"[0m"
+RED							:= $(ESC)"[31m"
+GREEN						:= $(ESC)"[32m"
+BLUE						:= $(ESC)"[34m"
+MAGENTA						:= $(ESC)"[35m"
+CYAN						:= $(ESC)"[36m"
 CARG1						= $(1)$(2)$(RES)
 CARG2						= $(call CARG1, $(1), $(2)) $(call CARG1,\
 								$(3), $(4))
