@@ -6,12 +6,12 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/24 17:02:38 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/24 17:30:52 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 # Some global variables import
-include libft.mk
+include Libft.mk
 
 # Compiler Configuration
 CC						= gcc
