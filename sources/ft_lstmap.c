@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 04:44:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:11:21 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/24 20:17:19 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			lst = lst->next;
 			if (!(cur->next = f(lst)))
 			{
-				ft_memdel(&cur->next);
+				ft_memdel((void**)&cur->next);
 				return (NULL);
 			}
 			cur = cur->next;

@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/24 17:30:30 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/24 20:13:52 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,8 +25,8 @@ FT_LIB					:= $(FT_PATH)/$(FT_NAME)
 # Global variables for compilation
 
 ifndef LIB_LNK
-LFLAGS					:=
-IFLAGS					:=
+	LFLAGS					:=
+	IFLAGS					:=
 endif
 
 LFLAGS					+= $(FT_LNK)

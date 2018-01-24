@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:00:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:31 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/24 20:16:16 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int						ft_atoi(const char *str)
 			(ft_ishex(*str) && system == 16))
 	{
 		c = ft_tolower(*str);
-		number = number * system + (c - (c >= 'a') ? ('a') : ('0')));
+		number = number * system + (c - ((c >= 'a') ? ('a') : ('0')));
 		str++;
 	}
 	return (number);
