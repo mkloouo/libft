@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_ishex.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:38:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/23 18:33:03 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/23 18:13:48 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/23 18:14:09 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void					*ft_memalloc(size_t size)
+int						ft_ishex(int c)
 {
-	unsigned char		*ptr;
-
-	ptr = (unsigned char*)malloc(size);
-	if (ptr)
-		ft_bzero(ptr, size);
-	return (ptr);
+	return (ft_isdigit(c) || (c >= 'A' && c <= 'F') ||
+			(c >= 'a' && c <= 'f'));
 }

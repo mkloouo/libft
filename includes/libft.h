@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/02 19:19:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/20 20:04:39 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/23 19:16:57 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@
 ** Returns: -1, 0, 1 on error, EOF or more lines to read respectively.
 */
 int						get_next_line(const int fd, char **line);
-
-int						get_integer(char *prompt);
-char					*get_string(char *prompt);
 
 void					ft_putchar(char c);
 void					ft_putchar_fd(char c, int fd);
@@ -84,7 +81,7 @@ void					ft_memdel(void **ap);
 char					*ft_itoa(int n);
 char					*ft_itoa_base(int value, int base);
 int						ft_atoi(const char *str);
-double					ft_atod(const char *str);
+double					ft_atof(const char *str);
 
 /*
 ** String library realization with some other string-like functions.
@@ -150,6 +147,8 @@ char));
 ** Char library.
 */
 
+int						ft_ishex(int c);
+
 int						ft_isspace(int c);
 int						ft_isdigit(int c);
 int						ft_isalpha(int c);
@@ -161,5 +160,14 @@ int						ft_islower(int c);
 
 int						ft_tolower(int c);
 int						ft_toupper(int c);
+
+/*
+** Miscellaneous.
+*/
+
+size_t					ft_arrlen(void *arr, size_t element_size);
+
+int						get_integer(char *prompt);
+char					*get_string(char *prompt);
 
 #endif
