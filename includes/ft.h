@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 18:51:55 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/26 19:57:11 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,11 +172,7 @@ void					arrdel(void **ap, size_t size);
 
 int						ft_abs(int number);
 
-
-
 int						get_integer(char *prompt);
 char					*get_string(char *prompt);
-
-void					exit_with_error(char *err, int errnum);
 
 #endif
