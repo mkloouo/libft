@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 19:59:54 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/26 16:08:39 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,11 +153,13 @@ int						ft_toupper(int c);
 ** Miscellaneous.
 */
 
-size_t					ft_arrlen(void *arr, size_t element_size);
+int						ft_abs(int number);
+
+size_t					getlen(void *array, size_t size);
 
 int						get_integer(char *prompt);
 char					*get_string(char *prompt);
 
-int						ft_abs(int number);
+void					exit_with_error(char *err, int errnum);
 
 #endif
