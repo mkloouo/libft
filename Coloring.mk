@@ -6,17 +6,17 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/24 20:41:10 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/24 20:52:59 by modnosum         ###   ########.fr        #
+#    Updated: 2018/01/26 16:30:23 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-UNAME					:= $(shell uname)
+UNAME					= $(shell uname)
 
 ifeq ($(UNAME),Linux)
-	ESC						:= "\x1B"
-	EFLAG					:= -e
+	ESC						= "\x1B"
+	EFLAG					= -e
 else ifeq ($(UNAME),Darwin)
-	ESC						:= "\\033"
+	ESC						= "\\033"
 endif
 
 ifeq ($(UNAME),$(filter Linux Darwin,$(UNAME)))

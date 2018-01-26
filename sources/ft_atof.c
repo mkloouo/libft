@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atod.c                                          :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/20 17:30:18 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:33 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/26 16:25:44 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/26 16:25:45 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-double					ft_atod(const char *str)
+double					ft_atof(const char *str)
 {
 	double				num;
 	double				part;
