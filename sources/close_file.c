@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   close_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 04:42:13 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 18:51:28 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/26 17:53:09 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/26 17:53:37 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <ft.h>
 
-void					ft_lstiter(t_list *lst, void (*f)(t_list*))
+int						close_file(int fd)
 {
-	t_list				*next;
-
-	if (f)
-	{
-		while (lst != NULL)
-		{
-			next = lst->next;
-			f(lst);
-			lst = next;
-		}
-	}
+	return (close(fd));
 }

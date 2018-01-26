@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   arrdel.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/01 04:42:13 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 18:51:28 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/26 18:24:53 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/26 19:08:33 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
-
-void					ft_lstiter(t_list *lst, void (*f)(t_list*))
+void					arrdel(void **ap, size_t size)
 {
-	t_list				*next;
+	unsigned char		*s;
+	size_t				i;
 
-	if (f)
+	s = *((unsigned char**)ap);
+	i = 0;
+	while (s[i])
 	{
-		while (lst != NULL)
-		{
-			next = lst->next;
-			f(lst);
-			lst = next;
-		}
+		ft_memdel((void**)(s + i));
+		i += size;
 	}
+	ft_memdel(ap);
 }
