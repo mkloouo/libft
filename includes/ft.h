@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 16:08:39 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/26 18:51:55 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <get_next_line.h>
 
 # define CASE_DIFF 32
+# define FILE_READ 1
+# define FILE_WRITE 2
+# define FILE_RW 3
 
 /*
 ** Input/Output Handling functions.
@@ -32,6 +35,13 @@ void					ft_putendl_fd(const char *s, int fd);
 
 void					ft_putnbr(int n);
 void					ft_putnbr_fd(int n, int fd);
+
+/*
+** Files
+*/
+
+int						open_file(const char *file, int mode);
+int						close_file(int fd);
 
 /*
 ** Single-linked list realization along with the useful functions.
@@ -54,8 +64,8 @@ void					ft_lstdelone(t_list **alst, void (*del)(void *,
 size_t));
 void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 
-void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void					ft_lstiter(t_list *lst, void (*f)(t_list *));
+t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *));
 
 t_list					*ft_lstat(t_list *alst, unsigned int index);
 
@@ -150,12 +160,19 @@ int						ft_tolower(int c);
 int						ft_toupper(int c);
 
 /*
+** Arrays
+*/
+
+size_t					getlen(void *array, size_t size);
+void					arrdel(void **ap, size_t size);
+
+/*
 ** Miscellaneous.
 */
 
 int						ft_abs(int number);
 
-size_t					getlen(void *array, size_t size);
+
 
 int						get_integer(char *prompt);
 char					*get_string(char *prompt);
