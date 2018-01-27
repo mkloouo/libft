@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 18:13:48 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:24 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:47 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_ishex(int c)
 {

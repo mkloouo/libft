@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:56:23 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:27:14 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_memcmp(const void *s1, const void *s2, size_t n)
 {

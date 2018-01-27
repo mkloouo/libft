@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 00:37:20 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:18 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 static int				number_len(int n)
 {

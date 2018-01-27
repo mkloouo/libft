@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 18:31:27 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:21:09 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:27:51 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 char					*ft_strtrim(const char *s)
 {

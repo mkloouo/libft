@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:36:22 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:17:04 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:27:50 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_tolower(int c)
 {

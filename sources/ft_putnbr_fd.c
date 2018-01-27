@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 00:35:49 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:25:58 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:20 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					ft_putnbr_fd(int n, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:30:42 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:24:29 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:06 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 size_t					ft_strlcat(char *dst, const char *src, size_t size)
 {

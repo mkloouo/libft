@@ -6,11 +6,11 @@
 /*   By: modnosum <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:19:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:25 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:48 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_isdigit(int c)
 {

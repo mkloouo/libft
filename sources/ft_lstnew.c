@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 04:31:38 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:11:03 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:34 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 t_list					*ft_lstnew(const void *content, size_t content_size)
 {

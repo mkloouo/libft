@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 16:25:44 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 16:25:45 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:59 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 double					ft_atof(const char *str)
 {

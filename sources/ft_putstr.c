@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:44:41 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:26:42 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:19 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					ft_putstr(const char *s)
 {

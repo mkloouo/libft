@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:00:35 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:27:17 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:30 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

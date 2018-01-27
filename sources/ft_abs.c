@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 12:14:40 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:35 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:29:00 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_abs(int number)
 {

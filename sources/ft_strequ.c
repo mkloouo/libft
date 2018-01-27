@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:56:48 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:24:42 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:10 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_strequ(const char *s1, const char *s2)
 {

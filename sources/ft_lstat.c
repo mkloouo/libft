@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 20:01:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:02 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:40 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 t_list					*ft_lstat(t_list *alst, unsigned int index)
 {

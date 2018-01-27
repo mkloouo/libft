@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 01:36:39 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:22:02 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:27:55 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 char					*ft_strrev(char *str)
 {

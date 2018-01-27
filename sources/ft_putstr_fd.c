@@ -6,12 +6,12 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:45:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:25:50 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:18 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <ft.h>
+#include <libft.h>
 
 void					ft_putstr_fd(const char *s, int fd)
 {

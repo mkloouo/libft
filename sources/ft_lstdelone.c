@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 04:34:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:17:06 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:37 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {

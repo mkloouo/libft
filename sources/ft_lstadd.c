@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 04:40:41 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:04 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:40 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					ft_lstadd(t_list **alst, t_list *new)
 {

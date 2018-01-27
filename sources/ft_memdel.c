@@ -6,12 +6,12 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:03:43 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:27:10 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:27 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <ft.h>
+#include <libft.h>
 
 void					ft_memdel(void **ap)
 {

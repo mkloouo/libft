@@ -6,11 +6,11 @@
 /*   By: modnosum <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 15:11:12 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:04:39 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:27:48 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						get_integer(char *prompt)
 {

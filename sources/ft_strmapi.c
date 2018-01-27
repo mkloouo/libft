@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:51:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:24:05 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:03 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 char					*ft_strmapi(const char *str, char (*f)(unsigned int,
 char))

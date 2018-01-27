@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:34:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:20 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:43 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_isupper(int c)
 {

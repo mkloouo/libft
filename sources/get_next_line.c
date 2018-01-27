@@ -6,12 +6,12 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/24 19:18:05 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:05:22 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:27:46 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <ft.h>
+#include <libft.h>
 
 static char				*read_data(const int fd, char *data)
 {

@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:49:50 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 20:12:30 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:52 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 void					ft_bzero(void *s, size_t n)
 {

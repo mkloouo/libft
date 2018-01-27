@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:52:03 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:24:00 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:01 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 int						ft_strncmp(const char *s1, const char *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:14:51 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:23:35 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:00 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 char					*ft_strncpy(char *dst, const char *src, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:46:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/24 17:24:09 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:28:04 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
+#include <libft.h>
 
 char					*ft_strmap(const char *str, char (*f)(char))
 {
