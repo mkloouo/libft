@@ -3,71 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/27 12:51:48 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/27 13:35:06 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/30 23:24:38 by modnosum          #+#    #+#             */
+/*   Updated: 2018/01/24 17:21:49 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <ft.h>
+#include <ft.h>
 
-static size_t			count_words(const char *s, char c)
+static int				count_words(char *s, char c)
 {
-	size_t				count;
+	int					i;
 
-	count = 0;
-	if (ft_strlen(s) > 0)
-		while (1)
-		{
-			s = ft_strchr(s, c);
-			if (s)
-			{
-				count++;
-				while (*s == c && *s)
-					s++;
-			}
-			else
-				break ;
-		}
-	return (count);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+			i++;
+		while (*s != c && *s)
+			s++;
+	}
+	return (i);
 }
 
-void					fill_words(char ***wp, size_t count, const char *s, char c)
+static int				new_word_len(char *s, char c, int cur)
 {
-	size_t				i;
-	const char			*sub;
+	int					len;
 
-	if (count > 0)
+	len = 0;
+	while (s[cur] != c && s[cur])
+	{
+		cur++;
+		len++;
+	}
+	return (len);
+}
+
+static char				*new_word(char *s, char c, int *cur)
+{
+	char				*word;
+	int					i;
+
+	while (s[*cur] == c)
+		(*cur)++;
+	word = ft_strnew(new_word_len(s, c, *cur));
+	if (word)
 	{
 		i = 0;
-		while (i < count)
-		{
-			while (*s && *s == c)
-				s++;
-			sub = s;
-			s = ft_strchr(s, c);
-			if (!((*wp)[i++] = ft_strsub(sub, 0, ((s)
-												  ? (size_t)(s++ - sub)
-												  : (ft_strlen(sub))))))
-			{
-				arrdel((void**)wp, sizeof(char*));
-				break ;
-			}
-		}
+		while (s[*cur] != c && s[*cur])
+			word[i++] = s[(*cur)++];
 	}
+	return (word);
 }
 
 char					**ft_strsplit(const char *s, char c)
 {
 	char				**words;
-	size_t				count;
+	int					i;
+	int					cur;
+	int					words_count;
 
-	count = count_words(s, c);
-	if ((words = (char**)ft_memalloc(sizeof(char*) * (count + 1))))
+	if ((i = 0) == 0 && !s)
+		return (NULL);
+	words_count = count_words((char *)s, c) + 1;
+	if (!(words = (char **)ft_memalloc(sizeof(char *) * words_count)))
+		return (NULL);
+	cur = 0;
+	while (i < words_count)
 	{
-		words[count - 1] = 0;
-		fill_words(&words, count, s, c);
+		words[i] = (i < words_count - 1) ? new_word((char *)s, c, &cur) : 0;
+		if (i < words_count - 1)
+			if (!words[i])
+			{
+				while (i >= 0)
+					ft_strdel(&words[i--]);
+				ft_memdel((void**)words);
+				return (NULL);
+			}
+		i++;
 	}
 	return (words);
 }
