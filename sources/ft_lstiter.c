@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 04:42:13 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/27 14:28:36 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/01/28 10:17:37 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 void					ft_lstiter(t_list *lst, void (*f)(t_list*))
 {
-	t_list				*next;
-
 	if (f)
-	{
-		while (lst != NULL)
+		while (lst)
 		{
-			next = lst->next;
 			f(lst);
-			lst = next;
+			lst = lst->next;
 		}
-	}
 }
