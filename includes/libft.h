@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/26 19:57:11 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/13 13:11:10 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,8 +163,8 @@ int						ft_toupper(int c);
 ** Arrays
 */
 
-size_t					getlen(void *array, size_t size);
-void					arrdel(void **ap, size_t size);
+size_t					ft_arrlen(void *arr, size_t element_size);
+void					ft_arrdel(void **ap, size_t element_size);
 
 /*
 ** Miscellaneous.

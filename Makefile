@@ -6,13 +6,13 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/01/28 11:47:37 by modnosum         ###   ########.fr        #
+#    Updated: 2018/02/13 14:39:47 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 # Compiler Configuration
 CC						= gcc
-CFLAGS					= -Wall -Wextra -Werror -pedantic #-fsanitize=address
+CFLAGS					= -Wall -Wextra -Werror -pedantic -fsanitize=address
 
 # Archiver Configuration
 AR						?= ar

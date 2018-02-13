@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getlen.c                                           :+:      :+:    :+:   */
+/*   ft_arrdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 16:09:33 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/27 14:27:47 by modnosum         ###   ########.fr       */
+/*   Created: 2018/02/13 13:11:42 by modnosum          #+#    #+#             */
+/*   Updated: 2018/02/13 13:11:43 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t					getlen(void *array, size_t size)
+void					ft_arrdel(void **ap, size_t element_size)
 {
 	unsigned char		*s;
 	size_t				i;
-	size_t				len;
 
-	s = (unsigned char*)array;
+	s = *((unsigned char**)ap);
 	i = 0;
-	len = 0;
-	while (*(s + i))
+	while (s[i])
 	{
-		i += size;
-		len++;
+		ft_memdel((void**)(s + i));
+		i += element_size;
 	}
-	return (len);
+	ft_memdel(ap);
 }
