@@ -14,23 +14,23 @@
 
 t_list					*ft_lstnew(const void *content, size_t content_size)
 {
-	t_list				*item;
+	t_list				*new;
 
-	if ((item = (t_list*)ft_memalloc(sizeof(t_list))))
+	if ((new = (t_list*)ft_memalloc(sizeof(t_list))))
 	{
-		item->content = NULL;
-		item->content_size = ((content) ? (content_size) : (0));
-		item->next = NULL;
+		new->content = NULL;
+		new->content_size = 0;
 		if (content)
 		{
-			if ((item->content = ft_memalloc(content_size)))
-				ft_memmove(item->content, content, content_size);
-			else
+			if (!(new->content = (void*)ft_memalloc(content_size)))
 			{
-				ft_memdel((void**)&item);
+				ft_memdel((void**)&new);
 				return (NULL);
 			}
+			ft_memmove(new->content, content, content_size);
+			new->content_size = content_size;
 		}
+		new->next = NULL;
 	}
-	return (item);
+	return (new);
 }

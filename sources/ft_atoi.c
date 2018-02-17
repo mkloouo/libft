@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-
+#include <stdio.h>
 static int				get_system(const char *str)
 {
 	if (*str == '0' && *(str + 1) == 'x')
@@ -27,7 +27,7 @@ int						ft_atoi(const char *str)
 	int					number;
 	int					system;
 	char				sign;
-	char				c;
+	char				n;
 
 	sign = 1;
 	while (ft_isspace(*str))
@@ -40,11 +40,12 @@ int						ft_atoi(const char *str)
 		sign = (*str == '-') ? -1 : 1;
 		str++;
 	}
-	while ((ft_isdigit(*str) && (system >= 2 && system <= 15)) ||
+	while ((ft_isdigit(*str) && (system == 8 || system == 10)) ||
 			(ft_ishex(*str) && system == 16))
 	{
-		c = ft_tolower(*str);
-		number = number * system + (c - ((c >= 'a') ? ('a') : ('0')));
+		n = ft_tolower(*str);
+		n = (n >= 'a') ? (n - 'a' + 10) : (n - '0');
+		number = number * system + n;
 		str++;
 	}
 	return (number * sign);

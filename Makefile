@@ -12,7 +12,10 @@
 
 # Compiler Configuration
 CC						= gcc
-CFLAGS					= -Wall -Wextra -Werror -pedantic -fsanitize=address
+CFLAGS					= -Wall -Wextra -Werror -pedantic
+
+# Make Flags
+MFLAGS					= --no-print-directory -C
 
 # Archiver Configuration
 AR						?= ar
