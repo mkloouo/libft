@@ -14,7 +14,7 @@
 #include <stdio.h>
 static int				get_system(const char *str)
 {
-	if (*str == '0' && *(str + 1) == 'x')
+	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
 		return (16);
 	if (*str == '0')
 		return (8);

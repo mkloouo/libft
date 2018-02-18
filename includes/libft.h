@@ -124,6 +124,7 @@ size_t len);
 char					*ft_strjoin(const char *s1, const char *s2);
 char					*ft_strtrim(const char *s);
 char					**ft_strsplit(const char *s, char c);
+void					ft_delsplit(char ***split);
 
 /*
 ** Creating || deleting strings.
@@ -158,13 +159,6 @@ int						ft_islower(int c);
 
 int						ft_tolower(int c);
 int						ft_toupper(int c);
-
-/*
-** Arrays
-*/
-
-size_t					ft_arrlen(void *arr, size_t element_size);
-void					ft_arrdel(void **ap, size_t element_size);
 
 /*
 ** Miscellaneous.
