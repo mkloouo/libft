@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/02/13 15:36:05 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/19 20:23:11 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,8 +165,11 @@ int						ft_toupper(int c);
 */
 
 int						ft_abs(int number);
+float					ft_fabs(float number);
 
 int						get_integer(char *prompt);
 char					*get_string(char *prompt);
+
+void					ft_swap(int *a, int *b);
 
 #endif
