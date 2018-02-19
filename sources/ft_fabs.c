@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-float					ft_abs(float number)
+float					ft_fabs(float number)
 {
 	return (number > 0 ? number : -number);
 }
