@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/24 19:18:05 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/27 14:27:46 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/21 17:08:51 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int						get_next_line(const int fd, char **line)
 {
 	static char			*fd_data[FD_SIZE];
 
-	if (line && fd >= 0 && read(fd, 0, 0) != -1)
+	if (line && fd >= 0 && read(fd, 0, 0) != -1 && BUFF_SIZE > 0)
 	{
 		*line = NULL;
 		fd_data[fd] = read_data(fd, fd_data[fd]);
