@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/02/19 20:23:11 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/22 00:08:55 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void					ft_putnbr_fd(int n, int fd);
 
 int						open_file(const char *file, int mode);
 int						close_file(int fd);
+int						get_line_count(const char *file);
 
 /*
 ** Single-linked list realization along with the useful functions.
@@ -171,5 +172,7 @@ int						get_integer(char *prompt);
 char					*get_string(char *prompt);
 
 void					ft_swap(int *a, int *b);
+
+int						ft_strcc(char *str, char c);
 
 #endif
