@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/02/13 14:39:47 by modnosum         ###   ########.fr        #
+#    Updated: 2018/02/25 17:55:32 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -46,7 +46,7 @@ fclean: clean
 re: fclean all
 
 # Used for colored out
-include Coloring.mk
+include ColorOut.mk
 
 # Variable rules
 $(FT_NAME): $(OBJS)
