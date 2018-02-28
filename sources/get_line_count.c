@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 00:09:35 by modnosum          #+#    #+#             */
-/*   Updated: 2018/02/25 18:25:40 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/28 19:18:22 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,3 @@ int						get_line_count(const char *file)
 	}
 	return (count);
 }
-/*
-** 'asdasd\newef\nasdas\n'
-** '\n'
-**
-**
-*/

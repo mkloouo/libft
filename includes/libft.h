@@ -6,12 +6,12 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/02/24 00:36:51 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/28 19:18:03 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <string.h>
 # include <get_next_line.h>

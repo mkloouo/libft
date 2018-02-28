@@ -6,12 +6,12 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:00:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/01/27 14:28:56 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/02/28 19:18:35 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdio.h>
+
 static int				get_system(const char *str)
 {
 	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
