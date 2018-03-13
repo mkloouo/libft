@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/02/25 17:55:32 by modnosum         ###   ########.fr        #
+#    Updated: 2018/03/13 18:36:09 by modnosum         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -28,6 +28,7 @@ OBJ_DIR					:= ./objects
 # Source and object lists
 SRCS					:= $(shell find $(SRC_DIR) -type f -name "*.c")
 OBJS					:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS:.c=.o))
+OBJ_DIRS				:= $(dir $(OBJS))
 
 # Add outside variables
 include Libft.mk
@@ -52,12 +53,12 @@ include ColorOut.mk
 $(FT_NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
 	$(call PRINT,$(GREEN),"Build $@.")
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | create_directories
 	@$(CC) -o $@ -c $< $(CFLAGS) $(IFLAGS)
 	$(call PRINT,$(BLUE),"$< ->",$(GREEN),"$@")
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-	$(call PRINT,$(BLUE),"Create $@ directory")
+create_directories:
+	@mkdir -p $(OBJ_DIRS)
+	$(call PRINT,$(BLUE),"Create $@ directories")
 
 # Shortcuts
 c: clean
