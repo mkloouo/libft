@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:29:58 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:40:27 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/03/13 20:03:11 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,3 @@ int						ft_tolower(int c);
 int						ft_toupper(int c);
 
 #endif
-
