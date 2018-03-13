@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 17:03:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/02/28 19:18:03 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:21:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,5 +175,8 @@ char					*get_string(char *prompt);
 void					ft_swap(int *a, int *b);
 
 int						ft_strcc(char *str, char c);
+
+double					ft_map(double value, double min, double max,
+double mmin, double mmax);
 
 #endif
