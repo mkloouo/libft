@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 13:24:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/14 13:24:43 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/03/14 13:29:58 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int						ft_mapi(int value, t_rangei from, t_rangei to)
 	int					mvalue;
 	int					slope;
 
-	if ((from->max - from->min) != 0)
-		slope = (to->max - to->min) / (from->max - from->min);
+	if ((from.max - from.min) != 0)
+		slope = (to.max - to.min) / (from.max - from.min);
 	else
 		return (0);
-	mvalue = to->min + slope * (value - from->min);
+	mvalue = to.min + slope * (value - from.min);
 	return (mvalue);
 }
