@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_mapi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 17:21:28 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 20:04:33 by modnosum         ###   ########.fr       */
+/*   Created: 2018/03/14 13:24:07 by modnosum          #+#    #+#             */
+/*   Updated: 2018/03/14 13:24:43 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ftmath.h>
+#include <ftrange.h>
 
-double					ft_map(double value, t_range *from,
-t_range *to)
+int						ft_mapi(int value, t_rangei from, t_rangei to)
 {
-	double				mvalue;
-	double				slope;
+	int					mvalue;
+	int					slope;
 
 	if ((from->max - from->min) != 0)
 		slope = (to->max - to->min) / (from->max - from->min);
