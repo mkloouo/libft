@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mapi.c                                          :+:      :+:    :+:   */
+/*   alloc_rangef.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/14 13:24:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/24 16:54:14 by modnosum         ###   ########.fr       */
+/*   Created: 2018/03/24 16:49:56 by modnosum          #+#    #+#             */
+/*   Updated: 2018/03/24 16:52:46 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ftstdlib.h>
 #include <ftrange.h>
 
-int						ft_mapi(int value, t_rangei *from, t_rangei *to)
+t_rangef				*alloc_rangef(float min, float max)
 {
-	int					mvalue;
-	int					slope;
+	t_rangef			*rf;
 
-	if ((from->max - from->min) != 0)
-		slope = (to->max - to->min) / (from->max - from->min);
-	else
-		return (0);
-	mvalue = to->min + slope * (value - from->min);
-	return (mvalue);
+	if ((rf = (t_rangef*)ft_memalloc(sizeof(t_rangef))))
+	{
+		rf->min = min;
+		rf->max = max;
+	}
+	return (rf);
 }
