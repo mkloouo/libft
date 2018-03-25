@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 13:21:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/24 16:53:21 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/03/25 16:36:13 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ t_rangef				get_rangef(float min, float max);
 t_rangei				*alloc_rangei(int min, int max);
 t_rangef				*alloc_rangef(float min, float max);
 
-void					set_rangei(t_rangei *ri, int min, int max);
-void					set_rangef(t_rangef *rf, float min, float max);
+void					set_rangei(t_rangei ri, int min, int max);
+void					set_rangef(t_rangef rf, float min, float max);
 
-int						ft_mapi(int value, t_rangei *from, t_rangei *to);
-float					ft_mapf(float value, t_rangef *from, t_rangef *to);
+int						ft_mapi(int value, t_rangei from, t_rangei to);
+float					ft_mapf(float value, t_rangef from, t_rangef to);
 
 #endif

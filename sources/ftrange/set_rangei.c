@@ -6,14 +6,14 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 13:27:59 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/24 16:53:55 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/03/25 16:37:15 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ftrange.h>
 
-void					set_rangei(t_rangei *ri, int min, int max)
+void					set_rangei(t_rangei ri, int min, int max)
 {
-	ri->min = min;
-	ri->max = max;
+	ri.min = min;
+	ri.max = max;
 }
