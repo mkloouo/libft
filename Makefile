@@ -31,7 +31,7 @@ OBJS					:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS:.c=.o))
 OBJ_DIRS				:= $(dir $(OBJS))
 
 # Add outside variables
-include Libft.mk
+include Project.mk
 
 # Phony rules
 .PHONY: all clean fclean re c f
@@ -47,7 +47,7 @@ fclean: clean
 re: fclean all
 
 # Used for colored out
-include ColorOut.mk
+include Color.mk
 
 # Variable rules
 $(FT_NAME): $(OBJS)
