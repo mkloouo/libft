@@ -1,65 +1,65 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
+#    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/20 14:45:00 by modnosum          #+#    #+#              #
-#    Updated: 2018/03/13 18:36:09 by modnosum         ###   ########.fr        #
+#    Created: 2018/08/16 20:46:58 by modnosum          #+#    #+#              #
+#    Updated: 2018/08/16 21:47:42 by modnosum         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
-# Compiler Configuration
-CC						= gcc
-CFLAGS					= -Wall -Wextra -Werror -pedantic
+SRC_EXT		:= c
+OBJ_EXT		:= o
+LIB_EXT		:= a
 
-# Make Flags
-MFLAGS					= --no-print-directory -C
+include ../libft/Project.mk
 
-# Archiver Configuration
-AR						?= ar
-ARFLAGS					= -crs
+SRC_DIR		:= $(libft_SRC_DIR)
+INC_DIR		:= $(libft_INC_DIR)
+OBJ_DIR		:= $(libft_OBJ_DIR)
 
-# Directories
-SRC_DIR					:= ./sources
-OBJ_DIR					:= ./objects
+NAME		:= $(libft_NAME)
 
-# Source and object lists
-SRCS					:= $(shell find $(SRC_DIR) -type f -name "*.c")
-OBJS					:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRCS:.c=.o))
-OBJ_DIRS				:= $(dir $(OBJS))
+CC			:= gcc
+CFLAGS		:= -Wall -Werror -Wextra -pedantic
 
-# Add outside variables
-include Project.mk
+AR			:= ar
+ARFLAGS		:= -crs
 
-# Phony rules
-.PHONY: all clean fclean re c f
+MFLAGS		?= --no-print-directory
 
-# Named rules
-all: $(FT_NAME)
+SRCS		:= $(shell find $(SRC_DIR) -type f -name *.$(SRC_EXT))
+OBJS		:= $(patsubst $(SRC_DIR)%.$(SRC_EXT),$(OBJ_DIR)%.$(OBJ_EXT),$(SRCS))
+DIRS		:= $(sort $(dir $(OBJS)))
+
+RESET_COLOR	?= \e[0m
+RED_COLOR	?= \e[31m
+GREEN_COLOR	?= \e[32m
+
+.MAIN: all
+.PHONY: all fclean clean re
+
+all: $(NAME)
+
 clean:
-	@rm -fR $(OBJ_DIR)
-	$(call PRINT,$(MAGENTA),"Removed $(OBJ_DIR).")
+	@rm -Rf $(OBJ_DIR)
+	@printf "$(RED_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(OBJ_DIR)"
+
 fclean: clean
-	@rm -fR $(FT_NAME)
-	$(call PRINT,$(MAGENTA),"Removed $(FT_NAME).")
-re: fclean all
+	@rm -Rf $(NAME)
+	@printf "$(RED_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(NAME)"
 
-# Used for colored out
-include Color.mk
+re: clean all
 
-# Variable rules
-$(FT_NAME): $(OBJS)
+$(DIRS):
+	@mkdir -p $@
+
+$(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(DIRS)
+	@$(CC) -o $@ -c $< $(IFLAGS) $(CFLAGS)
+	@printf "%-30s -> %s\n" $< $@
+
+$(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	$(call PRINT,$(GREEN),"Build $@.")
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c | create_directories
-	@$(CC) -o $@ -c $< $(CFLAGS) $(IFLAGS)
-	$(call PRINT,$(BLUE),"$< ->",$(GREEN),"$@")
-create_directories:
-	@mkdir -p $(OBJ_DIRS)
-	$(call PRINT,$(BLUE),"Create $@ directories")
-
-# Shortcuts
-c: clean
-f: fclean
+	@printf "$(GREEN_COLOR)%-30s\n$(RESET_COLOR)" "Built $(NAME)"
