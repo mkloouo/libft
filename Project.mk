@@ -6,20 +6,29 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/08/16 21:43:52 by modnosum         ###   ########.fr        #
+#    Updated: 2018/08/25 18:27:25 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 libft_PATH		?= .
 
-libft_SRC_DIR	:= source
-libft_INC_DIR	:= include
-libft_OBJ_DIR	:= build
+libft_SRC_EXT	:= c
+libft_INC_EXT	:= h
+libft_OBJ_EXT	:= o
+libft_LIB_EXT	:= a
 
-libft_NAME		:= libft.a
+libft_SRC_DIR	:= $(libft_PATH)/source
+libft_INC_DIR	:= $(libft_PATH)/include
+libft_OBJ_DIR	:= $(libft_PATH)/build
 
-libft_DEPS		:= $(shell find $(libft_PATH)/$(libft_SRC_DIR) -type f -name "*.c")
-libft_DEPS		+= $(shell find $(libft_PATH)/$(libft_INC_DIR) -type f -name "*.h")
+libft_NAME		:= $(libft_PATH)/libft.$(libft_LIB_EXT)
+
+libft_DEPS		:= $(shell find $(libft_PATH)/$(libft_SRC_DIR) -type f -name *.$(libft_SRC_EXT))
+libft_DEPS		+= $(shell find $(libft_PATH)/$(libft_INC_DIR) -type f -name *.$(libft_INC_EXT))
 
 IFLAGS			+= -I $(libft_PATH)/$(libft_INC_DIR)
 LFLAGS			+= -L $(libft_PATH) -l ft
+
+RESET_COLOR		?= \e[0m
+RED_COLOR		?= \e[31m
+GREEN_COLOR		?= \e[32m
