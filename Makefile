@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/16 20:46:58 by modnosum          #+#    #+#              #
-#    Updated: 2018/08/25 18:28:40 by modnosum         ###   ########.fr        #
+#    Updated: 2018/08/25 20:37:07 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ all: $(NAME)
 c: clean
 clean:
 	@rm -Rf $(OBJ_DIR)
-	@printf "$(RED_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(OBJ_DIR)"
+	@printf "$(CLEAN_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(OBJ_DIR)"
 
 f: fclean
 fclean: clean
 	@rm -Rf $(NAME)
-	@printf "$(RED_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(NAME)"
+	@printf "$(CLEAN_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(NAME)"
 
 re: fclean all
 
@@ -53,8 +53,8 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(OBJ_DIR)
 	@$(CC) -o $@ -c $< $(IFLAGS) $(CFLAGS)
-	@printf "$(GREEN_COLOR)%-30s$(RESET_COLOR) -> %s\n" $< $@
+	@printf "$(CREATE_COLOR)%-30s$(RESET_COLOR) -> %s\n" $< $@
 
 $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@printf "$(GREEN_COLOR)%-30s\n$(RESET_COLOR)" "Built $(NAME)"
+	@printf "$(FINISH_COLOR)%-30s\n$(RESET_COLOR)" "Built $(shell basename $(NAME))"

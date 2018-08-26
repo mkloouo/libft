@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/08/25 18:27:25 by modnosum         ###   ########.fr        #
+#    Updated: 2018/08/25 20:37:08 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,5 +30,6 @@ IFLAGS			+= -I $(libft_PATH)/$(libft_INC_DIR)
 LFLAGS			+= -L $(libft_PATH) -l ft
 
 RESET_COLOR		?= \e[0m
-RED_COLOR		?= \e[31m
-GREEN_COLOR		?= \e[32m
+CLEAN_COLOR		?= \e[35m
+CREATE_COLOR	?= \e[32m
+FINISH_COLOR	?= \e[36m
