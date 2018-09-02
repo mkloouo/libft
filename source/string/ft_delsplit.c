@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_delsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 19:18:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:57:12 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 20:20:33 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void					ft_delsplit(char ***split)
 			t1++;
 			ft_strdel(t2);
 		}
-		ft_memdel((void**)split);
+		free((void**)split);
 	}
 }

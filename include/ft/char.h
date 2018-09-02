@@ -10,16 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTCTYPE_H
-# define FTCTYPE_H
+#ifndef CHAR_H
+# define CHAR_H
 
 # define CASE_DIFF 32
-
-/*
-** Char library.
-*/
-
-int						ft_ishex(int c);
 
 int						ft_isspace(int c);
 int						ft_isdigit(int c);

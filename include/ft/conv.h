@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   conv.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:38:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:49:11 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/02 20:16:19 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 20:24:28 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <ft/memory.h>
+#ifndef CONV_H
+# define CONV_H
 
-void					*ft_memalloc(size_t size)
-{
-	unsigned char		*ptr;
+char					*ft_itoa(int n);
+char					*ft_itoa_base(int value, int base);
+int						ft_atoi(const char *str);
+double					ft_atof(const char *str);
 
-	if ((ptr = (unsigned char*)malloc(size)))
-		ft_bzero(ptr, size);
-	return (ptr);
-}
+#endif

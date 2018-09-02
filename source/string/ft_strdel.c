@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 17:49:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:57:51 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 20:19:23 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void					ft_strdel(char **as)
 {
 	if (as && *as)
-		ft_memdel((void**)as);
+		free(*(void**)as);
 }

@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 23:24:38 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 19:02:37 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 20:19:50 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char					**ft_strsplit(const char *s, char c)
 	if ((i = 0) == 0 && !s)
 		return (NULL);
 	words_count = count_words((char *)s, c) + 1;
-	if (!(words = (char **)ft_memalloc(sizeof(char *) * words_count)))
+	if (!(words = (char **)malloc(sizeof(char *) * words_count)))
 		return (NULL);
 	cur = 0;
 	while (i < words_count)
@@ -81,7 +81,7 @@ char					**ft_strsplit(const char *s, char c)
 			{
 				while (i >= 0)
 					ft_strdel(&words[i--]);
-				ft_memdel((void**)words);
+				free((void**)words);
 				return (NULL);
 			}
 		i++;

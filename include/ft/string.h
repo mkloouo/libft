@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTSTRING_H
-# define FTSTRING_H
+#ifndef STRING_H
+# define STRING_H
 
 # include <stddef.h>
 
@@ -54,7 +54,6 @@ void					ft_delsplit(char ***split);
 
 char					*ft_strnew(size_t size);
 void					ft_strdel(char **as);
-void					ft_strclr(char *s);
 
 /*
 ** Letters processing.

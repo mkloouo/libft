@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTIO_H
-# define FTIO_H
+#ifndef IO_H
+# define IO_H
 
 # include <stddef.h>
 

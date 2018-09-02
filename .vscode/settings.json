@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "range.h": "c"
+        "range.h": "c",
+        "char.h": "c"
     }
 }

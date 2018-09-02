@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:44:57 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:49:10 by modnosum         ###   ########.fr       */
+/*   Created: 2017/11/16 17:00:57 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 20:26:44 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/memory.h>
+#include <ft/char.h>
 
-void					*ft_memchr(const void *s, int c, size_t n)
+int		ft_atoi(const char *str)
 {
-	unsigned char		*ptr;
+	int	result;
+	int	sign;
 
-	ptr = (unsigned char*)s;
-	while (n)
+	result = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		++str;
+	if (*str == '+' || *str == '-')
 	{
-		if (*ptr == (unsigned char)c)
-			return (ptr);
-		ptr++;
-		n--;
+		if (*str == '-')
+			sign = -1;
+		++str;
 	}
-	return (NULL);
+	while (ft_isdigit(*str))
+		result = result * 10 + (*str++ - '0');
+	return (result * sign);
 }
