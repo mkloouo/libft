@@ -30,7 +30,7 @@ char					*ft_strnstr(const char *haystack, const char *needle,
 size_t n);
 int						ft_strcmp(const char *s1, const char *s2);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
-char					*ft_strchr(const char *s, int c);
+char const              *ft_strchr(char const *haystack, char needle);
 char					*ft_strrchr(const char *str, int c);
 
 size_t					ft_strlen(const char *str);
@@ -64,5 +64,11 @@ void					ft_striteri(char *str, void (*f)(unsigned int, char*));
 char					*ft_strmap(const char *str, char (*f)(char));
 char					*ft_strmapi(const char *str, char (*f)(unsigned int,
 char));
+
+/*
+** Wide string.
+*/
+
+
 
 #endif

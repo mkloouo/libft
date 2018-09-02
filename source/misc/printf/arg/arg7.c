@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   misc/printf/arg7.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 11:45:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:46:16 by modnosum         ###   ########.fr       */
+/*   Created: 2018/08/12 18:05:02 by modnosum          #+#    #+#             */
+/*   Updated: 2018/08/20 20:30:25 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <ft/string.h>
-#include <ft/io.h>
+#include <misc/printf/arg.h>
+#include <ft_printf.h>
 
-void					ft_putstr_fd(const char *s, int fd)
+void			form_string(t_info *info)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	size_t		i;
+	size_t		len;
+	wchar_t		*str;
+
+	len = my_strlen(info->data.s);
+	str = malloc(sizeof(wchar_t) * (len + 1));
+	i = 0;
+	while (i < len)
+	{
+		str[i] = (wchar_t)info->data.s[i];
+		++i;
+	}
+	str[i] = 0;
+	info->data.ws = str;
+	form_wide_string(info);
+	free(str);
 }

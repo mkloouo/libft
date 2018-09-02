@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   misc/printf/arg9.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 11:45:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:46:16 by modnosum         ###   ########.fr       */
+/*   Created: 2018/08/12 18:05:02 by modnosum          #+#    #+#             */
+/*   Updated: 2018/08/20 20:54:32 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <ft/string.h>
-#include <ft/io.h>
+#include <misc/printf/arg.h>
+#include <ft_printf.h>
 
-void					ft_putstr_fd(const char *s, int fd)
+void			form_char(t_info *info)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	info->data.wc = (wchar_t)((signed char)info->data.c);
+	form_wide_char(info);
 }

@@ -25,6 +25,8 @@
 # define INPUT_END 0
 # define INPUT_ERROR -1
 
+# define PRINTF_ERROR -1
+
 # if defined (_WIN32) || defined (_WIN64)
 #  define LINE_BREAK "\r\n"
 # else
@@ -35,27 +37,35 @@
 ** Input/Output Handling functions.
 */
 
-int						ft_get_string(const int fd, char **str, char *sep);
-int						ft_get_int(const int fd, int *i, char *sep);
-int						ft_get_float(const int fd, float *f, char *sep);
+int     ft_printf(char const *fmt, ...);
+int     ft_fdprintf(int fd, const char *fmt, ...);
+int     ft_sprintf(char **dst, char const *fmt, ...);
 
-void					ft_putchar(char c);
-void					ft_putchar_fd(char c, int fd);
+int	    ft_get_string(const int fd, char **str, char *sep);
+int	    ft_get_int(const int fd, int *i, char *sep);
+int	    ft_get_float(const int fd, float *f, char *sep);
 
-void					ft_putstr(const char *s);
-void					ft_putstr_fd(const char *s, int fd);
-void					ft_putendl(const char *s);
-void					ft_putendl_fd(const char *s, int fd);
+void    ft_putchar(char c);
+void    ft_putchar_fd(char c, int fd);
 
-void					ft_putnbr(int n);
-void					ft_putnbr_fd(int n, int fd);
+void	ft_putstr(const char *s);
+void	ft_putstr_fd(const char *s, int fd);
+
+void    ft_putnstr(const char *str);
+void    ft_putnstr_fd(const char *str, int fd);
+
+void	ft_putendl(const char *s);
+void	ft_putendl_fd(const char *s, int fd);
+
+void	ft_putnbr(int n);
+void	ft_putnbr_fd(int n, int fd);
 
 /*
 ** Files
 */
 
-int						ft_open_file(const char *file, int mode);
-int						ft_close_file(int fd);
-int						ft_get_line_count(const char *file);
+int		ft_open_file(const char *file, int mode);
+int		ft_close_file(int fd);
+int		ft_get_line_count(const char *file);
 
 #endif
