@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 17:17:50 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 19:52:51 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:57:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <ft/io.h>
 
-int						open_file(const char *file, int mode)
+int						ft_open_file(const char *file, int mode)
 {
 	int					fd;
 

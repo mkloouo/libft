@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 00:09:35 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 19:52:26 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:57:48 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft/string.h>
 #include <ft/io.h>
 
-int						get_line_count(const char *file)
+int						ft_get_line_count(const char *file)
 {
 	char				buff[BUFF_SIZE + 1];
 	int					fd;
@@ -25,7 +25,7 @@ int						get_line_count(const char *file)
 	p = 0;
 	r = 0;
 	count = 0;
-	if ((fd = open_file(file, FILE_READ)) != -1)
+	if ((fd = ft_open_file(file, FILE_READ)) != -1)
 	{
 		while ((r = read(fd, buff, BUFF_SIZE)) > 0)
 		{
@@ -35,7 +35,7 @@ int						get_line_count(const char *file)
 		}
 		if (p != r && buff[p - 1] != '\n')
 			count++;
-		close_file(fd);
+		ft_close_file(fd);
 	}
 	return (count);
 }

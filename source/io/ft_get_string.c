@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:01:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 19:52:29 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/02 19:57:03 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int				parse_data(char **data, char **str, char *sep)
 	return (INPUT_ERROR);
 }
 
-int						get_string(const int fd, char **str, char *sep)
+int						ft_get_string(const int fd, char **str, char *sep)
 {
 	static char			*fd_data[FD_SIZE];
 

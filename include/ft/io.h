@@ -35,9 +35,9 @@
 ** Input/Output Handling functions.
 */
 
-int						get_string(const int fd, char **str, char *sep);
-int						get_int(const int fd, int *i, char *sep);
-int						get_float(const int fd, float *f, char *sep);
+int						ft_get_string(const int fd, char **str, char *sep);
+int						ft_get_int(const int fd, int *i, char *sep);
+int						ft_get_float(const int fd, float *f, char *sep);
 
 void					ft_putchar(char c);
 void					ft_putchar_fd(char c, int fd);
@@ -54,8 +54,8 @@ void					ft_putnbr_fd(int n, int fd);
 ** Files
 */
 
-int						open_file(const char *file, int mode);
-int						close_file(int fd);
-int						get_line_count(const char *file);
+int						ft_open_file(const char *file, int mode);
+int						ft_close_file(int fd);
+int						ft_get_line_count(const char *file);
 
 #endif
