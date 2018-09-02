@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alloc_rangei.c                                     :+:      :+:    :+:   */
+/*   ft_set_rangei.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/24 16:50:19 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/24 16:52:20 by modnosum         ###   ########.fr       */
+/*   Created: 2018/03/14 13:27:59 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 19:53:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/memory.h>
 #include <ft/range.h>
 
-t_rangei				*alloc_rangei(int min, int max)
+void					set_rangei(t_rangei ri, int min, int max)
 {
-	t_rangei			*ri;
-
-	if ((ri = (t_rangei*)ft_memalloc(sizeof(t_rangei))))
-	{
-		ri->min = min;
-		ri->max = max;
-	}
-	return (ri);
+	(void)ri;
+	ri.min = min;
+	ri.max = max;
 }

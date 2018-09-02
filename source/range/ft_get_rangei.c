@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_rangef.c                                       :+:      :+:    :+:   */
+/*   ft_get_rangei.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/14 13:27:34 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/25 23:28:21 by modnosum         ###   ########.fr       */
+/*   Created: 2018/03/14 13:25:13 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 19:53:11 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/range.h>
 
-void					set_rangef(t_rangef rf, float min, float max)
+t_rangei				get_rangei(int min, int max)
 {
-	(void)rf;
-	rf.min = min;
-	rf.max = max;
+	t_rangei			ri;
+
+	ri.min = min;
+	ri.max = max;
+	return (ri);
 }

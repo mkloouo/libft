@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_rangei.c                                       :+:      :+:    :+:   */
+/*   ft_close_file.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/14 13:25:13 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/14 13:25:55 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/26 17:53:09 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 19:51:38 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/range.h>
+#include <unistd.h>
+#include <ft/io.h>
 
-t_rangei				get_rangei(int min, int max)
+int						close_file(int fd)
 {
-	t_rangei			ri;
-
-	ri.min = min;
-	ri.max = max;
-	return (ri);
+	return (close(fd));
 }

@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_file.c                                       :+:      :+:    :+:   */
+/*   ft_open_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 17:53:09 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:39:43 by modnosum         ###   ########.fr       */
+/*   Created: 2018/01/26 17:17:50 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/02 19:52:51 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <fcntl.h>
 #include <ft/io.h>
 
-int						close_file(int fd)
+int						open_file(const char *file, int mode)
 {
-	return (close(fd));
+	int					fd;
+
+	if (mode == FILE_READ)
+		fd = open(file, O_RDONLY);
+	else if (mode == FILE_WRITE)
+		fd = open(file, O_WRONLY);
+	else if (mode == FILE_RW)
+		fd = open(file, O_RDWR);
+	else
+		fd = -1;
+	return (fd);
 }
