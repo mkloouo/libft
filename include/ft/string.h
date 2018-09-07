@@ -60,7 +60,6 @@ char					*ft_strtrim(const char *s);
 */
 
 char					*ft_wstrncpy(char *dst, wchar_t const *src, size_t n);
-size_t					ft_wchar_size(wchar_t c);
 size_t					ft_wstrlen(wchar_t const *str);
 size_t					ft_wstrclen(wchar_t const *str, int is_prec,
 						size_t precision);

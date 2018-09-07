@@ -6,37 +6,33 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 16:25:44 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:23:44 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:42:36 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/char.h>
 #include <ft/conv.h>
 
-double					ft_atof(const char *str)
-{
-	double				num;
-	double				part;
-	int					sign;
+#include <ft/char.h>
 
-	num = ft_atoi(str);
+double		ft_atof(const char *str)
+{
+	double	num;
+	int		sign;
+	int		coeff;
+
+	num = 0.0f;
+	sign = 1;
 	while (ft_isspace(*str))
-		str++;
-	sign = (num >= 0) ? (1) : (-1);
-	num = (num >= 0) ? (num) : (-num);
-	str = (*str == '-' || *str == '+') ? (str + 1) : (str);
+		++str;
+	if ((*str == '-' && (sign = -1)) || *str == '+')
+		++str;
 	while (ft_isdigit(*str))
-		str++;
+		num = num * 10 + (*str++ - '0');
 	if (*str == '.')
 	{
-		str++;
-		part = 1.0 / 10;
+		coeff = 1;
 		while (ft_isdigit(*str))
-		{
-			num += (*str - '0') * part;
-			part /= 10;
-			str++;
-		}
+			num = num + ((double)(*str++ - '0') / (coeff *= 10));
 	}
-	return ((double)sign * num);
+	return (num * sign);
 }

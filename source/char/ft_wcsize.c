@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_delsplit.c                                      :+:      :+:    :+:   */
+/*   ft_wcsize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/28 19:18:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 17:03:22 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:29:44 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 17:30:46 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/string.h>
-#include <ft/memory.h>
+#include <ft/char.h>
 
-void					ft_delsplit(char ***split)
+size_t		ft_wcsize(wchar_t wc)
 {
-	char				**t1;
-	char				**t2;
-
-	if (split && *split)
-	{
-		t1 = *split;
-		while (*t1)
-		{
-			t2 = t1;
-			t1++;
-			free(*t2);
-		}
-		free(*split);
-	}
+	if (wc <= 0x7F)
+		return (1);
+	else if (wc <= 0x7FF)
+		return (2);
+	else if (wc <= 0xFFFF)
+		return (3);
+	else
+		return (4);
 }

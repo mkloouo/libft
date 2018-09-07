@@ -6,12 +6,14 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 00:37:20 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:28:41 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:43:13 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/memory.h>
+#include <ft/conv.h>
+
 #include <ft/string.h>
+#include <ft/memory.h>
 
 static int				number_len(int n)
 {

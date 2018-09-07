@@ -6,11 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 21:23:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 17:02:51 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:34:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/string.h>
+
+#include <ft/char.h>
 
 static void	write_more_than_one_byte(char *dst, wchar_t c,
 			size_t wc_size, size_t *j)
@@ -43,7 +45,7 @@ char		*ft_wstrncpy(char *dst, wchar_t const *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		wc_size = ft_wchar_size(*src);
+		wc_size = ft_wcsize(*src);
 		if ((n - i) < wc_size)
 			break ;
 		if (wc_size == 1)

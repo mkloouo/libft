@@ -6,6 +6,8 @@
 		"parse.h": "c",
 		"arg.h": "c",
 		"io.h": "c",
-		"string.h": "c"
+		"string.h": "c",
+		"stddef.h": "c",
+		"wchar.h": "c"
 	}
 }
