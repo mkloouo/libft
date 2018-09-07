@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:01:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 17:05:39 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 18:26:57 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <ft/string.h>
 #include <ft/memory.h>
 
-static char				*read_data(const int fd, char *data, char *sep)
+static char		*read_data(const int fd, char *data, char *sep)
 {
-	char				*temp;
-	char				buffer[BUFF_SIZE + 1];
-	int					rd;
+	char		*temp;
+	char		buffer[BUFF_SIZE + 1];
+	int			rd;
 
 	if ((data = (data) ? (data) : (ft_strnew(0, 0))))
 	{
@@ -38,9 +38,9 @@ static char				*read_data(const int fd, char *data, char *sep)
 	return (NULL);
 }
 
-static int				parse_data(char **data, char **str, char *sep)
+static int		parse_data(char **data, char **str, char *sep)
 {
-	char				*nl;
+	char		*nl;
 
 	if (*data)
 	{
@@ -62,9 +62,9 @@ static int				parse_data(char **data, char **str, char *sep)
 	return (INPUT_ERROR);
 }
 
-int						ft_get_string(const int fd, char **str, char *sep)
+int				ft_get_string(const int fd, char **str, char *sep)
 {
-	static char			*fd_data[FD_SIZE];
+	static char	*fd_data[FD_SIZE];
 
 	if (str && fd >= 0 && read(fd, 0, 0) != -1 && BUFF_SIZE > 0)
 	{

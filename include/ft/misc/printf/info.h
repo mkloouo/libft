@@ -69,7 +69,5 @@ void					clear_info(t_info *info);
 void					init_info(t_info *info);
 void					update_result(t_info *info, const char *str,
 						size_t n);
-void					print_result(const char *fmt, const char *p,
-						t_info *info);
 
 #endif

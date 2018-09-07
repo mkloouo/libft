@@ -15,14 +15,6 @@
 #include <ft/io.h>
 #include <ft/memory.h>
 
-void			print_result(const char *fmt, const char *p, t_info *info)
-{
-	update_result(info, p, (fmt - p));
-	ft_putnstr(info->result, info->cur);
-	if (info->result)
-		free((void*)info->result);
-}
-
 static void		clear_info_helper(t_info *info)
 {
 	info->is_pointer = 0;

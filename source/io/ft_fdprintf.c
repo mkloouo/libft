@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_fdprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 16:03:40 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 18:02:04 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:48:22 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 18:02:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <ft/memory.h>
 
-int					ft_printf(char const *fmt, ...)
+int     ft_fdprintf(int fd, const char *fmt, ...)
 {
 	int		ret;
 	va_list	args;
@@ -24,7 +24,7 @@ int					ft_printf(char const *fmt, ...)
 	va_start(args, fmt);
 	if ((ret = ft_vsprintf(&dst, fmt, &args)) > 0)
 	{
-		write(STDOUT_FILENO, dst, ret);
+		write(fd, dst, ret);
 		free(dst);
 	}
 	va_end(args);

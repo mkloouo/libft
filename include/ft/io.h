@@ -14,6 +14,7 @@
 # define IO_H
 
 # include <stddef.h>
+# include <stdarg.h>
 
 # define FILE_READ 1
 # define FILE_WRITE 2
@@ -40,6 +41,7 @@
 int     ft_printf(char const *fmt, ...);
 int     ft_fdprintf(int fd, const char *fmt, ...);
 int     ft_sprintf(char **dst, char const *fmt, ...);
+int		ft_vsprintf(char **dst, char const *fmt, va_list *args);
 
 int	    ft_get_string(const int fd, char **str, char *sep);
 int	    ft_get_int(const int fd, int *i, char *sep);
