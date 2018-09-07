@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/string.h>
 
-static size_t	my_numlen(long long num)
+static size_t	ft_numlen(long long num)
 {
 	size_t		len;
 
@@ -51,7 +52,7 @@ static void		form_digits(char *str, size_t nlen, size_t pos, long long num)
 static void		form_signed_helper(t_info *info, size_t *nlen,
 				size_t *spos, int *place_sign)
 {
-	*nlen = my_numlen(info->data.ll);
+	*nlen = ft_numlen(info->data.ll);
 	if (info->data.ll == 0 && info->is_prec && info->precision == 0)
 		*nlen = 0;
 	info->arg_cur = *nlen;
@@ -69,7 +70,7 @@ static void		form_signed_helper(t_info *info, size_t *nlen,
 			info->arg_cur = *nlen;
 		*spos = (info->is_left_adj) ? (0) : (info->arg_cur - *nlen);
 	}
-	info->arg = my_strnew(info->arg_cur, ((info->is_zero_padd &&
+	info->arg = ft_strnew(info->arg_cur, ((info->is_zero_padd &&
 								!info->is_left_adj &&
 								!info->is_prec) ? ('0') : (' ')));
 	if (!info->is_prec && info->is_zero_padd)

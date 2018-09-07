@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 05:43:51 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:54:10 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:28:19 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char					*ft_itoa_base(int value, int base)
 	int					i;
 
 	length = count_length(value, base, &move);
-	if (!(ascii = (char*)ft_strnew(sizeof(char) * length)))
+	if (!(ascii = (char*)ft_strnew(sizeof(char) * length, 0)))
 		return (NULL);
 	i = 0;
 	if (move)

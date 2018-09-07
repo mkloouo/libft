@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 23:24:38 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:19:50 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:03:42 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char				*new_word(char *s, char c, int *cur)
 
 	while (s[*cur] == c)
 		(*cur)++;
-	word = ft_strnew(new_word_len(s, c, *cur));
+	word = ft_strnew(new_word_len(s, c, *cur), 0);
 	if (word)
 	{
 		i = 0;
@@ -80,7 +80,7 @@ char					**ft_strsplit(const char *s, char c)
 			if (!words[i])
 			{
 				while (i >= 0)
-					ft_strdel(&words[i--]);
+					free(words[i--]);
 				free((void**)words);
 				return (NULL);
 			}

@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/string.h>
 
-static size_t	my_numlen(unsigned long long num, int base)
+static size_t	ft_numlen(unsigned long long num, int base)
 {
 	size_t		len;
 
@@ -51,8 +52,8 @@ static void		form_digits(t_info *info, size_t nlen, size_t pos,
 static void		form_unsigned_helper(t_info *info, size_t *nlen,
 				size_t *place_sign, char const *base_chars)
 {
-	info->base = my_strlen(base_chars);
-	*nlen = my_numlen(info->data.ull, info->base);
+	info->base = ft_strlen(base_chars);
+	*nlen = ft_numlen(info->data.ull, info->base);
 	if (info->data.ull == 0 && (!info->is_alt || (info->base == 16 &&
 		info->is_alt)) && (info->is_prec && info->precision == 0))
 		*nlen = 0;
@@ -72,7 +73,7 @@ static void		form_unsigned_helper(t_info *info, size_t *nlen,
 			info->arg_cur = *nlen;
 		info->arg_size = (info->is_left_adj) ? (0) : (info->arg_cur - *nlen);
 	}
-	info->arg = my_strnew(info->arg_cur, ((info->is_zero_padd &&
+	info->arg = ft_strnew(info->arg_cur, ((info->is_zero_padd &&
 		!info->is_left_adj && !info->is_prec) ? ('0') : (' ')));
 	if (!info->is_prec && info->is_zero_padd)
 		info->arg_size = 0;

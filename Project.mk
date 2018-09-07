@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/08/25 20:37:08 by modnosum         ###   ########.fr        #
+#    Updated: 2018/09/07 17:17:24 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ libft_NAME		:= $(libft_PATH)/libft.$(libft_LIB_EXT)
 libft_DEPS		:= $(shell find $(libft_PATH)/$(libft_SRC_DIR) -type f -name *.$(libft_SRC_EXT))
 libft_DEPS		+= $(shell find $(libft_PATH)/$(libft_INC_DIR) -type f -name *.$(libft_INC_EXT))
 
-IFLAGS			+= -I $(libft_PATH)/$(libft_INC_DIR)
-LFLAGS			+= -L $(libft_PATH) -l ft
+IFLAGS			+= -I$(libft_INC_DIR)
+LFLAGS			+= -L$(libft_PATH) -lft
 
 RESET_COLOR		?= \e[0m
 CLEAN_COLOR		?= \e[35m

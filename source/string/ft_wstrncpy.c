@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_string3.c                                       :+:      :+:    :+:   */
+/*   ft_wstrncpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/12 21:23:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/08/20 20:11:14 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:02:51 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <my_string.h>
+#include <ft/string.h>
 
 static void	write_more_than_one_byte(char *dst, wchar_t c,
 			size_t wc_size, size_t *j)
@@ -35,7 +35,7 @@ static void	write_more_than_one_byte(char *dst, wchar_t c,
 	}
 }
 
-char		*my_wstrncpy(char *dst, wchar_t const *src, size_t n)
+char		*ft_wstrncpy(char *dst, wchar_t const *src, size_t n)
 {
 	size_t	i;
 	size_t	wc_size;
@@ -43,7 +43,7 @@ char		*my_wstrncpy(char *dst, wchar_t const *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		wc_size = my_wchar_size(*src);
+		wc_size = ft_wchar_size(*src);
 		if ((n - i) < wc_size)
 			break ;
 		if (wc_size == 1)

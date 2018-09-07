@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
-#include <ft_printf.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/string.h>
 
 void			form_wide_char(t_info *info)
 {
-	info->arg_cur = my_wchar_size(info->data.wc);
+	info->arg_cur = ft_wchar_size(info->data.wc);
 	info->arg_size = info->width;
 	if (info->arg_cur > info->arg_size)
 		info->arg_size = info->arg_cur;
-	info->arg = my_strnew(info->arg_size, (info->is_zero_padd ? '0' : ' '));
+	info->arg = ft_strnew(info->arg_size, (info->is_zero_padd ? '0' : ' '));
 	if (info->is_left_adj)
-		my_wstrncpy(info->arg,
+		ft_wstrncpy(info->arg,
 			&(info->data.wc), info->arg_cur);
 	else
-		my_wstrncpy((info->arg + info->arg_size - info->arg_cur),
+		ft_wstrncpy((info->arg + info->arg_size - info->arg_cur),
 			&(info->data.wc), info->arg_cur);
 	info->arg_cur = info->arg_size;
 }

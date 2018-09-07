@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_float.c                                     :+:      :+:    :+:   */
+/*   ft_wchar_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:07:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:38:19 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:01:14 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 17:01:21 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/io.h>
-
-#include <ft/conv.h>
 #include <ft/string.h>
-#include <ft/memory.h>
 
-int						get_float(const int fd, float *f, char *sep)
+size_t		ft_wchar_size(wchar_t c)
 {
-	char				*input;
-	int					r;
-
-	if ((r = ft_get_string(fd, &input, sep)) > 0)
-		*f = ft_atof(input);
+	if (c <= 0x7F)
+		return (1);
+	else if (c <= 0x7FF)
+		return (2);
+	else if (c <= 0xFFFF)
+		return (3);
 	else
-		return (r);
-	free(input);
-	return (1);
+		return (4);
 }

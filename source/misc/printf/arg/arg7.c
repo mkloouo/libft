@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
-#include <ft_printf.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/memory.h>
+#include <ft/string.h>
 
 void			form_string(t_info *info)
 {
@@ -19,7 +20,7 @@ void			form_string(t_info *info)
 	size_t		len;
 	wchar_t		*str;
 
-	len = my_strlen(info->data.s);
+	len = ft_strlen(info->data.s);
 	str = malloc(sizeof(wchar_t) * (len + 1));
 	i = 0;
 	while (i < len)

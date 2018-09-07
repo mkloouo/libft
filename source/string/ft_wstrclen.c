@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_float.c                                     :+:      :+:    :+:   */
+/*   ft_wstrclen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:07:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:38:19 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:01:48 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 17:01:53 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/io.h>
-
-#include <ft/conv.h>
 #include <ft/string.h>
-#include <ft/memory.h>
 
-int						get_float(const int fd, float *f, char *sep)
+size_t		ft_wstrclen(wchar_t const *str, int is_prec, size_t precision)
 {
-	char				*input;
-	int					r;
+	size_t	i;
+	size_t	len;
+	size_t	wchar_size;
 
-	if ((r = ft_get_string(fd, &input, sep)) > 0)
-		*f = ft_atof(input);
-	else
-		return (r);
-	free(input);
-	return (1);
+	i = 0;
+	len = 0;
+	while (str[i])
+	{
+		wchar_size = ft_wchar_size(str[i]);
+		if (is_prec && (len + wchar_size) > precision)
+			break ;
+		len += wchar_size;
+		++i;
+	}
+	return (len);
 }

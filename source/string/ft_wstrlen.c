@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 12:56:23 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:49:09 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:01:31 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 17:01:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/memory.h>
+#include <ft/string.h>
 
-int						ft_memcmp(const void *s1, const void *s2, size_t n)
+size_t		ft_wstrlen(wchar_t const *str)
 {
-	unsigned char		*ptr1;
-	unsigned char		*ptr2;
+	size_t	len;
 
-	ptr1 = (unsigned char*)s1;
-	ptr2 = (unsigned char*)s2;
-	while (n > 0)
-	{
-		if (*ptr1 != *ptr2)
-			return (*ptr1 - *ptr2);
-		ptr1++;
-		ptr2++;
-		n--;
-	}
-	return (0);
+	len = 0;
+	while (str[len])
+		++len;
+	return (len);
 }

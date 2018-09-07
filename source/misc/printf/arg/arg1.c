@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/memory.h>
 
 void			manage_arg(va_list *args, t_info *info)
 {

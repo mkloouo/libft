@@ -6,13 +6,15 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:01:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 19:57:03 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:05:39 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft/io.h>
+
 #include <unistd.h>
 #include <ft/string.h>
-#include <ft/io.h>
+#include <ft/memory.h>
 
 static char				*read_data(const int fd, char *data, char *sep)
 {
@@ -20,14 +22,14 @@ static char				*read_data(const int fd, char *data, char *sep)
 	char				buffer[BUFF_SIZE + 1];
 	int					rd;
 
-	if ((data = (data) ? (data) : (ft_strnew(0))))
+	if ((data = (data) ? (data) : (ft_strnew(0, 0))))
 	{
 		while ((rd = read(fd, buffer, BUFF_SIZE)) > 0)
 		{
 			buffer[rd] = 0;
 			temp = data;
 			data = ft_strjoin(data, buffer);
-			ft_strdel(&temp);
+			free(temp);
 			if (ft_strstr(buffer, sep))
 				return (data);
 		}
@@ -44,17 +46,17 @@ static int				parse_data(char **data, char **str, char *sep)
 	{
 		if (ft_strlen(*data) == 0)
 		{
-			ft_strdel(data);
+			free(*data);
 			return (INPUT_END);
 		}
-		if ((nl = ft_strstr(*data, sep)))
+		if ((nl = (char*)ft_strstr(*data, sep)))
 		{
 			*nl = 0;
 			nl = ft_strdup(nl + ft_strlen(sep));
 		}
 		*str = ft_strdup(*data);
-		ft_strdel(data);
-		*data = (nl) ? (nl) : (ft_strnew(0));
+		free(*data);
+		*data = (nl) ? (nl) : (ft_strnew(0, 0));
 		return (INPUT_OK);
 	}
 	return (INPUT_ERROR);

@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <my_string.h>
-
-#include <misc/printf/info.h>
+#include <ft/misc/printf/info.h>
+#include <ft/string.h>
+#include <ft/io.h>
+#include <ft/memory.h>
 
 void			print_result(const char *fmt, const char *p, t_info *info)
 {
 	update_result(info, p, (fmt - p));
-	my_putnstr(info->result, info->cur);
+	ft_putnstr(info->result, info->cur);
 	if (info->result)
 		free((void*)info->result);
 }
@@ -36,7 +36,7 @@ void			clear_info(t_info *info)
 	{
 		info->cur = 0;
 		info->size = 200;
-		info->result = my_strnew(info->size, 0);
+		info->result = ft_strnew(info->size, 0);
 	}
 	info->width = 0;
 	info->precision = 0;
@@ -64,10 +64,10 @@ void			update_result(t_info *info, const char *str, size_t n)
 {
 	if (n > (info->size - info->cur))
 	{
-		info->result = my_resize_str(info->result, info->size,
+		info->result = ft_resize_str(info->result, info->size,
 									(info->size * 2) + n);
 		info->size = (info->size * 2) + n;
 	}
-	my_strncpy((info->result + info->cur), str, n);
+	ft_strncpy((info->result + info->cur), str, n);
 	info->cur += n;
 }

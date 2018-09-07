@@ -1,6 +1,11 @@
 {
-    "files.associations": {
-        "range.h": "c",
-        "char.h": "c"
-    }
+	"files.associations": {
+		"range.h": "c",
+		"char.h": "c",
+		"info.h": "c",
+		"parse.h": "c",
+		"arg.h": "c",
+		"io.h": "c",
+		"string.h": "c"
+	}
 }

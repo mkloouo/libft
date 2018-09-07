@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/28 19:18:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:20:33 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 17:03:22 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void					ft_delsplit(char ***split)
 		{
 			t2 = t1;
 			t1++;
-			ft_strdel(t2);
+			free(*t2);
 		}
-		free((void**)split);
+		free(*split);
 	}
 }

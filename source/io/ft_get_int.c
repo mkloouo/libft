@@ -6,13 +6,15 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:04:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:23:18 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:38:12 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
+
 #include <ft/conv.h>
 #include <ft/string.h>
+#include <ft/memory.h>
 
 int						ft_get_int(const int fd, int *i, char *sep)
 {
@@ -23,6 +25,6 @@ int						ft_get_int(const int fd, int *i, char *sep)
 		*i = ft_atoi(input);
 	else
 		return (r);
-	ft_strdel(&input);
+	free(input);
 	return (1);
 }

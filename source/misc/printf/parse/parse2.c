@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_parse_printf2.c                                 :+:      :+:    :+:   */
+/*   parse2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 20:49:49 by modnosum          #+#    #+#             */
-/*   Updated: 2018/08/20 22:56:41 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:30:24 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <my_parse_printf.h>
+#include <ft/io.h>
+#include <ft/misc/printf/parse.h>
 
-size_t		my_parse_number(char const **fmt)
+size_t		parse_number(char const **fmt)
 {
 	size_t	number;
 
@@ -26,7 +26,7 @@ size_t		my_parse_number(char const **fmt)
 	return (number);
 }
 
-void		my_parse_flags(char const **fmt, t_info *info)
+void		parse_flags(char const **fmt, t_info *info)
 {
 	while (**fmt == '#' || **fmt == '0' || **fmt == '-' ||
 			**fmt == ' ' || **fmt == '+')

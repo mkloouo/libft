@@ -1,47 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_string1.c                                       :+:      :+:    :+:   */
+/*   ft_resize_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/24 20:30:08 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:43:48 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 17:00:01 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 17:00:17 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include <ft/string.h>
 
-#include <my_string.h>
+#include <ft/memory.h>
 
-void		my_putnstr(char *str, size_t n)
-{
-	write(STDOUT_FILENO, str, n);
-}
-
-void		my_strfill(char *str, size_t len, char ch)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-		str[i++] = ch;
-}
-
-void		my_strncpy(char *dst, const char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		dst[i] = src[i];
-		++i;
-	}
-}
-
-char		*my_resize_str(const char *src, size_t size, size_t new_size)
+char		*ft_resize_str(const char *src, size_t size, size_t new_size)
 {
 	size_t	i;
 	char	*dst;

@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #include <ft/string.h>
-#include <misc/printf/arg.h>
+#include <ft/misc/printf/arg.h>
 
 void			form_wide_string(t_info *info)
 {
-	info->arg_cur = my_wstrclen(info->data.ws, info->is_prec, info->precision);
+	info->arg_cur = ft_wstrclen(info->data.ws, info->is_prec, info->precision);
 	info->arg_size = info->width;
 	if (info->arg_cur > info->arg_size)
 		info->arg_size = info->arg_cur;
-	info->arg = my_strnew(info->arg_size, (info->is_zero_padd ? '0' : ' '));
+	info->arg = ft_strnew(info->arg_size, (info->is_zero_padd ? '0' : ' '));
 	if (info->is_left_adj)
-		my_wstrncpy(info->arg, info->data.ws, info->arg_cur);
+		ft_wstrncpy(info->arg, info->data.ws, info->arg_cur);
 	else
-		my_wstrncpy((info->arg + info->arg_size - info->arg_cur),
+		ft_wstrncpy((info->arg + info->arg_size - info->arg_cur),
 					info->data.ws, info->arg_cur);
 	info->arg_cur = info->arg_size;
 }

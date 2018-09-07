@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 17:51:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:56:36 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:29:34 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t len)
 	char				*str;
 	int					i;
 
-	str = ft_strnew(len);
+	str = ft_strnew(len, 0);
 	if (str && s)
 	{
 		i = 0;

@@ -6,13 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 14:15:02 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:56:39 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:24:19 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/string.h>
 
-char					*ft_strrchr(const char *str, int c)
+char const				*ft_strrchr(char const *str, char c)
 {
 	size_t				i;
 
@@ -20,8 +20,8 @@ char					*ft_strrchr(const char *str, int c)
 	while (i > 0)
 	{
 		if (str[i] == (unsigned char)c)
-			return ((char*)str + i);
+			return (str + i);
 		i--;
 	}
-	return ((str[i] == (unsigned char)c) ? ((char*)str) : NULL);
+	return ((str[i] == (unsigned char)c) ? (str) : NULL);
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 00:06:39 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:56:56 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:39:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/string.h>
 
-int						ft_strcc(char *str, char c)
+size_t		ft_strcc(char const *str, char c)
 {
-	int					count;
+	size_t	count;
 
 	count = 0;
 	while ((str = ft_strchr(str, c)))

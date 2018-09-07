@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/string.h>
 
 void			manage_custom(va_list *args, t_info *info)
 {
@@ -18,7 +19,7 @@ void			manage_custom(va_list *args, t_info *info)
 	if (info->specifier == '%')
 	{
 		info->arg_cur = (info->width) ? (info->width) : (1);
-		info->arg = my_strnew(info->arg_cur, ' ');
+		info->arg = ft_strnew(info->arg_cur, ' ');
 		info->arg[((info->is_left_adj) ? (0) : (info->arg_cur - 1))] = '%';
 	}
 }

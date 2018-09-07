@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 00:37:20 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:53:56 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:28:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char					*ft_itoa(int n)
 
 	sign = n;
 	len = number_len(n);
-	str = ft_strnew((n < 0) ? (len + 1) : (len));
+	str = ft_strnew(((n < 0) ? (len + 1) : (len)), 0);
 	if (str)
 	{
 		len = 0;

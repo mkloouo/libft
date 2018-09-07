@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <misc/printf/arg.h>
-#include <ft_printf.h>
+#include <ft/misc/printf/arg.h>
+#include <ft/io.h>
 
 void			form_char(t_info *info)
 {

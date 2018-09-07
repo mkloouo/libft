@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_parse_printf1.c                                 :+:      :+:    :+:   */
+/*   parse1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 20:47:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/08/20 23:16:30 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:31:08 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
-#include <my_string.h>
-#include <my_parse_printf.h>
+#include <ft/io.h>
+#include <ft/string.h>
+#include <ft/misc/printf/parse.h>
 
-int				my_parse_star(char const **fmt, va_list *args, size_t *assign,
+int				parse_star(char const **fmt, va_list *args, size_t *assign,
 				int think_of_minus_as_minus_not_error)
 {
 	int			hmm;
@@ -32,11 +32,11 @@ int				my_parse_star(char const **fmt, va_list *args, size_t *assign,
 		return (hmm);
 	}
 	else
-		*assign = my_parse_number(fmt);
+		*assign = parse_number(fmt);
 	return (2);
 }
 
-void			my_manage_size_flag(char const **fmt, t_info *info,
+void			manage_size_flag(char const **fmt, t_info *info,
 				t_size_f new_size, int move)
 {
 	if (move)
@@ -48,29 +48,29 @@ void			my_manage_size_flag(char const **fmt, t_info *info,
 		info->size_flag = new_size;
 }
 
-void			my_parse_size_flags(char const **fmt, t_info *info)
+void			parse_size_flags(char const **fmt, t_info *info)
 {
 	char const	*f;
 	char const	*flags;
 
 	flags = "zjhl";
-	while ((f = my_strchr(flags, **fmt)))
+	while ((f = ft_strchr(flags, **fmt)))
 	{
 		if (*f == 'h')
-			my_manage_size_flag(fmt, info, SHORT_SIZE,
+			manage_size_flag(fmt, info, SHORT_SIZE,
 								((*(*fmt + 1) == 'h') ? (-1) : (0)));
 		else if (*f == 'l')
-			my_manage_size_flag(fmt, info, LONG_SIZE,
+			manage_size_flag(fmt, info, LONG_SIZE,
 								((*(*fmt + 1) == 'l') ? (1) : (0)));
 		else if (*f == 'j')
-			my_manage_size_flag(fmt, info, LONG_LONG_SIZE, 0);
+			manage_size_flag(fmt, info, LONG_LONG_SIZE, 0);
 		else
-			my_manage_size_flag(fmt, info, SIZE_T_SIZE, 0);
+			manage_size_flag(fmt, info, SIZE_T_SIZE, 0);
 		++*fmt;
 	}
 }
 
-int				my_parse_specifier(char const **fmt, t_info *info)
+int				parse_specifier(char const **fmt, t_info *info)
 {
 	char		test;
 
@@ -92,7 +92,7 @@ int				my_parse_specifier(char const **fmt, t_info *info)
 	return (1);
 }
 
-int				my_validate_arg(char const **pos, char const **fmt,
+int				validate_arg(char const **pos, char const **fmt,
 				t_info *info, va_list *args)
 {
 	int			is_valid;
@@ -100,14 +100,14 @@ int				my_validate_arg(char const **pos, char const **fmt,
 
 	save = *fmt;
 	++*fmt;
-	my_parse_flags(fmt, info);
-	if (my_parse_star(fmt, args, &info->width, 1) == 1)
+	parse_flags(fmt, info);
+	if (parse_star(fmt, args, &info->width, 1) == 1)
 		info->is_left_adj = 1;
 	if (**fmt == '.' && ++*fmt && (info->is_prec = 1))
-		if (my_parse_star(fmt, args, &info->precision, 0) != 2)
+		if (parse_star(fmt, args, &info->precision, 0) != 2)
 			info->is_prec = 0;
-	my_parse_size_flags(fmt, info);
-	if (!(is_valid = my_parse_specifier(fmt, info)))
+	parse_size_flags(fmt, info);
+	if (!(is_valid = parse_specifier(fmt, info)))
 		*pos = save;
 	else
 		*pos = *fmt;

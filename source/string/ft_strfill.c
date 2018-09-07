@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_float.c                                     :+:      :+:    :+:   */
+/*   ft_strfill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:07:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:38:19 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/07 16:19:38 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/07 16:20:54 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/io.h>
-
-#include <ft/conv.h>
 #include <ft/string.h>
-#include <ft/memory.h>
 
-int						get_float(const int fd, float *f, char *sep)
+char		*ft_strfill(char *dst, size_t len, char c)
 {
-	char				*input;
-	int					r;
+	char	*s;
 
-	if ((r = ft_get_string(fd, &input, sep)) > 0)
-		*f = ft_atof(input);
-	else
-		return (r);
-	free(input);
-	return (1);
+	s = dst;
+	while (len)
+	{
+		*dst++ = c;
+		--len;
+	}
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:51:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:56:45 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:29:20 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char))
 	int					i;
 
 	if (str && f)
-		if ((mapped_str = ft_strnew(ft_strlen(str))))
+		if ((mapped_str = ft_strnew(ft_strlen(str), 0)))
 		{
 			i = 0;
 			while (str[i])

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_PRINTF_INFO_H
-# define MY_PRINTF_INFO_H
+#ifndef INFO_H
+# define INFO_H
 
 # include <wchar.h>
 # include <sys/types.h>

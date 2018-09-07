@@ -6,14 +6,15 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 16:03:40 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:34:54 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/07 16:38:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
-#include <misc/printf/info.h>
-#include <misc/printf/parse.h>
-#include <misc/printf/arg.h>
+
+#include <ft/misc/printf/info.h>
+#include <ft/misc/printf/parse.h>
+#include <ft/misc/printf/arg.h>
 
 int					ft_printf(char const *fmt, ...)
 {
@@ -30,7 +31,7 @@ int					ft_printf(char const *fmt, ...)
 		if (*fmt == '%')
 		{
 			update_result(&info, save, (fmt - save));
-			if (my_validate_arg(&save, &fmt, &info, &args))
+			if (validate_arg(&save, &fmt, &info, &args))
 				manage_arg(&args, &info);
 		}
 		else
