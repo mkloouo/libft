@@ -6,13 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:45:21 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:46:16 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/08 17:09:20 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <ft/string.h>
 #include <ft/io.h>
+
+#include <ft/string.h>
 
 void					ft_putstr_fd(const char *s, int fd)
 {

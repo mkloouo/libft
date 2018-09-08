@@ -6,13 +6,12 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:01:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 18:26:57 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/08 17:08:27 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
 
-#include <unistd.h>
 #include <ft/string.h>
 #include <ft/memory.h>
 

@@ -15,6 +15,11 @@
 
 # include <stddef.h>
 # include <stdarg.h>
+# include <unistd.h>
+
+# define IO_STDIN STDIN_FILENO
+# define IO_STDOUT STDOUT_FILENO
+# define IO_STDERR STDERR_FILENO
 
 # define FILE_READ 1
 # define FILE_WRITE 2
