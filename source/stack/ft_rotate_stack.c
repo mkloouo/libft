@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft/memory.h                                         :+:      :+:    :+:   */
+/*   ft_rotate_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:23:04 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:42:13 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/08 16:28:08 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/08 18:40:00 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include <ft/stack.h>
 
-# include <stdlib.h>
-
-void	*ft_memncpy(void *dst, void *src, size_t n);
-
-void	ft_common_deleter(void *mem, size_t size);
-
-#endif
+void	ft_rotate_stack(t_stack *stack)
+{
+	if (stack->bottom != 0 && stack->bottom != stack->top)
+	{
+		stack->top = stack->top->prev;
+		stack->bottom = stack->top->next;
+	}
+}
