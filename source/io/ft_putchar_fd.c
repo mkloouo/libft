@@ -6,11 +6,10 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:43:39 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:39:41 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/08 17:09:11 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <ft/io.h>
 
 void					ft_putchar_fd(char c, int fd)

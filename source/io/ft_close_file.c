@@ -6,11 +6,10 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 17:53:09 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 18:04:48 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/08 17:09:56 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <ft/io.h>
 
 int	ft_close_file(int fd)
