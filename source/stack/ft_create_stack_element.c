@@ -12,11 +12,6 @@
 
 #include <ft/stack.h>
 
-#define DEBUG
-#ifdef DEBUG
-#include <ft/io.h>
-#endif
-
 #include <ft/memory.h>
 
 t_stack_element				*ft_create_stack_element(void *data, size_t size)
@@ -29,10 +24,6 @@ t_stack_element				*ft_create_stack_element(void *data, size_t size)
 	if (data && size)
 	{
 		new_element->data = malloc(sizeof(char) * size);
-#ifdef DEBUG
-		ft_printf("[%s] new_element->data: %p\n", "ft_create_stack_element",
-		new_element->data);
-#endif
 		new_element->size = size;
 		ft_memncpy(new_element->data, data, size);
 	}
