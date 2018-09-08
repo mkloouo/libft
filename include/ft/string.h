@@ -14,6 +14,7 @@
 # define STRING_H
 
 # include <stddef.h>
+# include <ft/bool.h>
 
 size_t					ft_strlen(const char *str);
 
@@ -40,6 +41,8 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char const              *ft_strchr(char const *str, char c);
 char const				*ft_strrchr(char const *str, char c);
+
+t_bool					ft_str_is_digits(char const *str);
 
 /*
 ** Count @c/@s occurences in @str
