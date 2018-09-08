@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft/memory.h                                         :+:      :+:    :+:   */
+/*   ft_create_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:23:04 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:42:13 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/08 15:43:42 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/08 18:15:06 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include <ft/stack.h>
 
-# include <stdlib.h>
+#include <ft/memory.h>
 
-void	*ft_memncpy(void *dst, void *src, size_t n);
+t_stack		*ft_create_stack(void)
+{
+	t_stack	*stack;
 
-void	ft_common_deleter(void *mem, size_t size);
-
-#endif
+	stack = malloc(sizeof(t_stack));
+	stack->top = 0;
+	stack->bottom = 0;
+	return (stack);
+}
