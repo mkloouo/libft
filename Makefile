@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/16 20:46:58 by modnosum          #+#    #+#              #
-#    Updated: 2018/09/07 17:23:51 by modnosum         ###   ########.fr        #
+#    Updated: 2018/09/08 15:08:50 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,6 @@ OBJ_DIR		:= $(libft_OBJ_DIR)
 
 NAME		:= $(libft_NAME)
 
-BASE_NAME	:= $(shell basename $(NAME))
-BASE_DIR	:= $(shell basename $(OBJ_DIR))
-
 CC			:= gcc
 CFLAGS		:= -Wall -Werror -Wextra -pedantic -g
 
@@ -34,32 +31,29 @@ OBJS		:= $(patsubst $(SRC_DIR)%.$(SRC_EXT),$(OBJ_DIR)%.$(OBJ_EXT),$(SRCS))
 DIRS		:= $(sort $(dir $(OBJS)))
 
 .MAIN: all
-.PHONY: all clean fclean re c f
+.PHONY: all clean fclean re c f test
 
 all: $(NAME)
-
 c: clean
 clean:
-	@rm -Rf $(OBJ_DIR)
-	@printf "$(CLEAN_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(BASE_DIR)"
-
+	@rm -fr $(OBJ_DIR)
+	@rm -fr test
+	@$(call REMOVED_FILE,$(OBJ_DIR))
 f: fclean
 fclean: clean
-	@rm -Rf $(NAME)
-	@printf "$(CLEAN_COLOR)%-30s\n$(RESET_COLOR)" "Removed $(BASE_NAME)"
-
+	@rm -fr $(NAME)
+	@$(call REMOVED_FILE,$(NAME))
 re: fclean all
+test: test.c | $(NAME)
+	$(CC) -o $@ $(CFLAGS) $(IFLAGS) $< $(LFLAGS)
 
 $(OBJ_DIR):
 	@mkdir -p $(DIRS)
 
 $(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(OBJ_DIR)
 	@$(CC) -o $@ -c $< $(IFLAGS) $(CFLAGS)
-	@printf "$(CREATE_COLOR)%-30s$(RESET_COLOR) -> %s\n" $< $@
+	@$(call CREATED_FILE,$@,$<);
 
 $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@printf "$(FINISH_COLOR)%-30s\n$(RESET_COLOR)" "Built $(BASE_NAME)"
-
-test: test.c | $(NAME)
-	$(CC) -o $@ $(CFLAGS) $(IFLAGS) $< $(LFLAGS)
+	@$(call FINISHED_FILE,$@);

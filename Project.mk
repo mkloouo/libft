@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/09/07 17:17:24 by modnosum         ###   ########.fr        #
+#    Updated: 2018/09/08 15:08:12 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,3 +33,7 @@ RESET_COLOR		?= \e[0m
 CLEAN_COLOR		?= \e[35m
 CREATE_COLOR	?= \e[32m
 FINISH_COLOR	?= \e[36m
+
+REMOVED_FILE	?= @printf "$(CLEAN_COLOR)%50s\n$(RESET_COLOR)" "Removed $(1)"
+CREATED_FILE	?= @printf "$(CREATE_COLOR)%-50s$(RESET_COLOR) -> %s\n" $(1) $(2)
+FINISHED_FILE	?= @printf "$(FINISH_COLOR)%50s\n$(RESET_COLOR)" "Built $(1)"
