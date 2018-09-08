@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv.h                                             :+:      :+:    :+:   */
+/*   ft_strtoli.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/02 20:16:19 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 15:26:51 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/08 15:16:06 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/08 15:26:17 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONV_H
-# define CONV_H
+#include <ft/conv.h>
 
-char					*ft_itoa(int n);
-char					*ft_itoa_base(int value, int base);
-int						ft_atoi(const char *str);
-double					ft_atof(const char *str);
+#include <ft/char.h>
 
-int						ft_strtoi(char const *str, char *err);
-long					ft_strtoli(char const *str);
+long		ft_strtoli(char const* str)
+{
+	long	result;
+	int		sign;
 
-#endif
+	sign = 1;
+	result = 0;
+	if (*str == '-')
+	{
+		sign = -1;
+		++str;
+	}
+	while (ft_isdigit(*str))
+		result = result * 10 + (*str++ - '0');
+	return (result * sign);
+}
