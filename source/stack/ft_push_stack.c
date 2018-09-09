@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:54:05 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 18:34:14 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 15:19:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ void				ft_push_stack(t_stack *stack, t_stack_element *element)
 		stack->bottom->prev = element;
 		element->next = stack->bottom;
 	}
+	++stack->size;
 }

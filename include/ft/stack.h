@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:38:04 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/09 00:23:12 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 15:19:18 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct				s_stack
 {
 	t_stack_element			*top;
 	t_stack_element			*bottom;
+	size_t					size;
 }							t_stack;
 
 t_stack						*ft_create_stack(void);

@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:43:42 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 18:15:06 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 15:19:26 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_stack		*ft_create_stack(void)
 	stack = malloc(sizeof(t_stack));
 	stack->top = 0;
 	stack->bottom = 0;
+	stack->size = 0;
 	return (stack);
 }
