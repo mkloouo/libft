@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 21:02:02 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/09 21:04:01 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 21:07:04 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void		ft_lstdelall(t_list **listp, t_element_deleter_f deleter)
 		ft_lstdel(el, deleter);
 	}
 	ft_lstdel((*listp), deleter);
+	*listp = 0;
 }
