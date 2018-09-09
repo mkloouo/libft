@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_top.c                                      :+:      :+:    :+:   */
+/*   ft_stack_swap_top.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <ft/stack.h>
 
-void				ft_swap_top(t_stack *stack)
+void				ft_stack_swap_top(t_stack *stack)
 {
 	t_stack_element	*top;
 	t_stack_element	*ptop;

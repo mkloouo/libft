@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:38:04 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 18:49:16 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 00:23:12 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ t_stack_element				*ft_pop_stack(t_stack *stack);
 void						ft_rotate_stack(t_stack *stack);
 void						ft_rrotate_stack(t_stack *stack);
 
-void						ft_swap_top(t_stack *stack);
+void						ft_stack_swap_top(t_stack *stack);
 
 #endif
