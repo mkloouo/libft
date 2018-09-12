@@ -25,6 +25,7 @@ char					*ft_resize_str(const char *src, size_t size,
 						size_t new_size);
 
 char					*ft_strdup(char const *src);
+char					*ft_strndup(char const *src, size_t n);
 
 char					*ft_strcpy(char *dst, const char *src);
 char					*ft_strncpy(char *dst, const char *src, size_t len);

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   fd_data_deleter.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/30 15:46:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:29:13 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/09 21:17:35 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/09 21:19:24 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/string.h>
+#include <ft/misc/get_string/fd_data.h>
 
-char					*ft_strmap(const char *str, char (*f)(char))
+void			fd_data_deleter(void *data, size_t size)
 {
-	char				*mapped_str;
-	int					i;
+	t_fd_data	*fd_data;
 
-	if (str && f)
-		if ((mapped_str = ft_strnew(ft_strlen(str), 0)))
-		{
-			i = 0;
-			while (str[i])
-			{
-				mapped_str[i] = f(str[i]);
-				i++;
-			}
-			return (mapped_str);
-		}
-	return (NULL);
+	if (data)
+	{
+		(void)size;
+		fd_data = (t_fd_data*)data;
+		fd_data->fd = 0;
+		if (fd_data->data)
+			free(fd_data->data);
+		fd_data->data = 0;
+		free(fd_data);
+	}
 }

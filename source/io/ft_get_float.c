@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:07:37 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:09:03 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/09 21:13:16 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <ft/string.h>
 #include <ft/memory.h>
 
-int			ft_get_float(const int fd, float *f, char *sep)
+int			ft_get_float(int fd, float *f, char const *sep)
 {
 	char	*input;
 	int		r;

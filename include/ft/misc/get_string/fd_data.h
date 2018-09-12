@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   fd_data.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/30 15:51:32 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:29:20 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/09 21:18:22 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/11 22:35:51 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/string.h>
+#ifndef FD_DATA_H
+# define FD_DATA_H
 
-char					*ft_strmapi(const char *str, char (*f)(unsigned int,
-char))
+# include <stddef.h>
+
+# include <ft/list.h>
+
+typedef struct	s_fd_data
 {
-	char				*mapped_str;
-	int					i;
+	int			fd;
+	char		*data;
+	size_t		data_len;
+}				t_fd_data;
 
-	if (str && f)
-		if ((mapped_str = ft_strnew(ft_strlen(str), 0)))
-		{
-			i = 0;
-			while (str[i])
-			{
-				mapped_str[i] = f(i, str[i]);
-				i++;
-			}
-			return (mapped_str);
-		}
-	return (NULL);
-}
+int				manage_fd_data(t_list **list, int fd, char **strp,
+				char const *sep);
+
+t_list			*manage_find_fd_data(t_list *list, int fd);
+
+void			fd_data_deleter(void *data, size_t size);
+
+#endif

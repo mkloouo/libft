@@ -48,9 +48,9 @@ int     ft_fdprintf(int fd, const char *fmt, ...);
 int     ft_sprintf(char **dst, char const *fmt, ...);
 int		ft_vsprintf(char **dst, char const *fmt, va_list *args);
 
-int	    ft_get_string(const int fd, char **str, char *sep);
-int	    ft_get_int(const int fd, int *i, char *sep);
-int	    ft_get_float(const int fd, float *f, char *sep);
+int	    ft_get_string(int fd, char **strp, char const *sep);
+int	    ft_get_int(int fd, int *i, char const *sep);
+int	    ft_get_float(int fd, float *f, char const *sep);
 
 void    ft_putchar(char c);
 void    ft_putchar_fd(char c, int fd);
