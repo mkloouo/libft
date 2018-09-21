@@ -6,14 +6,14 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 19:58:47 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 20:00:17 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:38:20 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOL_H
-#define BOOL_H
+# define BOOL_H
 
-typedef enum	s_bool
+typedef enum	e_bool
 {
 	FALSE,
 	TRUE

@@ -6,13 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 17:48:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:08:17 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:46:07 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
 
-int     	ft_sprintf(char **dst, char const *fmt, ...)
+int			ft_sprintf(char **dst, char const *fmt, ...)
 {
 	int		ret;
 	va_list	args;

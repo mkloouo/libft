@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 17:53:29 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:08:21 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:46:23 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <ft/misc/printf/parse.h>
 #include <ft/misc/printf/arg.h>
 
-int     		ft_vsprintf(char **dst, char const *fmt, va_list *args)
+int				ft_vsprintf(char **dst, char const *fmt, va_list *args)
 {
 	t_info		info;
 	const char	*save;

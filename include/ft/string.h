@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string.h                                         :+:      :+:    :+:   */
+/*   string.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 18:28:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:32:33 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/21 15:43:34 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/21 15:44:53 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char const				*ft_strnstr(const char *haystack, const char *needle,
 int						ft_strcmp(const char *s1, const char *s2);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char const              *ft_strchr(char const *str, char c);
+char const				*ft_strchr(char const *str, char c);
 char const				*ft_strrchr(char const *str, char c);
 
 t_bool					ft_str_is_digits(char const *str);

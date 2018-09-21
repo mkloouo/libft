@@ -6,13 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 20:44:49 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:09:28 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:45:39 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
 
-void    ft_putnstr(const char *str, size_t n)
+void	ft_putnstr(const char *str, size_t n)
 {
 	if (str)
 	{

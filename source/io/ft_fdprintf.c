@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 17:48:22 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:08:12 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:45:28 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <ft/memory.h>
 
-int     ft_fdprintf(int fd, const char *fmt, ...)
+int			ft_fdprintf(int fd, const char *fmt, ...)
 {
 	int		ret;
 	va_list	args;

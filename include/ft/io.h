@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   io.h                                             :+:      :+:    :+:   */
+/*   io.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/13 17:58:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:40:31 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/21 15:38:52 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/21 15:42:34 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,23 @@
 ** Input/Output Handling functions.
 */
 
-int     ft_printf(char const *fmt, ...);
-int     ft_fdprintf(int fd, const char *fmt, ...);
-int     ft_sprintf(char **dst, char const *fmt, ...);
+int		ft_printf(char const *fmt, ...);
+int		ft_fdprintf(int fd, const char *fmt, ...);
+int		ft_sprintf(char **dst, char const *fmt, ...);
 int		ft_vsprintf(char **dst, char const *fmt, va_list *args);
 
-int	    ft_get_string(int fd, char **strp, char const *sep);
-int	    ft_get_int(int fd, int *i, char const *sep);
-int	    ft_get_float(int fd, float *f, char const *sep);
+int		ft_get_string(int fd, char **strp, char const *sep);
+int		ft_get_int(int fd, int *i, char const *sep);
+int		ft_get_float(int fd, float *f, char const *sep);
 
-void    ft_putchar(char c);
-void    ft_putchar_fd(char c, int fd);
+void	ft_putchar(char c);
+void	ft_putchar_fd(char c, int fd);
 
 void	ft_putstr(const char *s);
 void	ft_putstr_fd(const char *s, int fd);
 
-void    ft_putnstr(const char *str, size_t n);
-void    ft_putnstr_fd(const char *str, int fd, size_t n);
+void	ft_putnstr(const char *str, size_t n);
+void	ft_putnstr_fd(const char *str, int fd, size_t n);
 
 void	ft_putendl(const char *s);
 void	ft_putendl_fd(const char *s, int fd);

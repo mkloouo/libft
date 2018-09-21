@@ -6,16 +6,16 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 20:44:49 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:09:30 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:45:50 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/io.h>
 
-void    ft_putnstr_fd(const char *str, int fd, size_t n)
+void	ft_putnstr_fd(const char *str, int fd, size_t n)
 {
-    if (str)
+	if (str)
 	{
-        write(fd, str, n);
+		write(fd, str, n);
 	}
 }

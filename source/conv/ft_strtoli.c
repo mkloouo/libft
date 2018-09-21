@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:16:06 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 15:26:17 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:45:07 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <ft/char.h>
 
-long		ft_strtoli(char const* str)
+long		ft_strtoli(char const *str)
 {
 	long	result;
 	int		sign;

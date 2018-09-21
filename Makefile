@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/16 20:46:58 by modnosum          #+#    #+#              #
-#    Updated: 2018/09/08 15:08:50 by modnosum         ###   ########.fr        #
+#    Updated: 2018/09/21 15:37:34 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ CFLAGS		:= -Wall -Werror -Wextra -pedantic -g
 
 AR			:= ar
 ARFLAGS		:= -crs
+
+IS_NORM_ENABLED	:= $(shell command -v norminette)
 
 SRCS		:= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
 OBJS		:= $(patsubst $(SRC_DIR)%.$(SRC_EXT),$(OBJ_DIR)%.$(OBJ_EXT),$(SRCS))
@@ -46,6 +48,14 @@ fclean: clean
 re: fclean all
 test: test.c | $(NAME)
 	$(CC) -o $@ $(CFLAGS) $(IFLAGS) $< $(LFLAGS)
+
+n: norm
+norm:
+ifeq (,$(IS_NORM_ENABLED))
+	@echo "no norminette on your pc"
+else
+	@find . -type f -name "*.[ch]" -exec norminette {} \+
+endif
 
 $(OBJ_DIR):
 	@mkdir -p $(DIRS)

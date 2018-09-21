@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc/printf/info.h                                   :+:      :+:    :+:   */
+/*   info.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/24 20:55:35 by modnosum          #+#    #+#             */
-/*   Updated: 2018/08/20 22:14:38 by modnosum         ###   ########.fr       */
+/*   Created: 2018/09/21 15:42:45 by modnosum          #+#    #+#             */
+/*   Updated: 2018/09/21 15:43:26 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <wchar.h>
 # include <sys/types.h>
 
-typedef union			u_data {
+typedef union			u_data
+{
 	char				c;
 	long long			ll;
 	wchar_t				wc;

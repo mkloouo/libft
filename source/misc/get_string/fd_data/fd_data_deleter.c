@@ -6,11 +6,13 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 21:17:35 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/09 21:19:24 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/09/21 15:31:58 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/misc/get_string/fd_data.h>
+
+#include <ft/memory.h>
 
 void			fd_data_deleter(void *data, size_t size)
 {
