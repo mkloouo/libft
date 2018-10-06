@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_data_to_fd_data.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 16:21:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 16:24:28 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 00:23:03 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int				read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
 		tmp = ft_strjoin(fd_data->data, buffer);
 		free(fd_data->data);
 		fd_data->data = tmp;
-		fd_data->data_len += rd;
 		tmp = (char*)ft_strstr(fd_data->data, sep);
 		if (tmp)
 		{

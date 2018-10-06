@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fdprintf.c                                      :+:      :+:    :+:   */
+/*   ft_dprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 
 #include <ft/memory.h>
 
-int			ft_fdprintf(int fd, const char *fmt, ...)
+int			ft_dprintf(int fd, const char* fmt, ...)
 {
 	int		ret;
 	va_list	args;

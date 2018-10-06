@@ -27,7 +27,7 @@ void			clear_info(t_info *info)
 	if (!info->result)
 	{
 		info->cur = 0;
-		info->size = 200;
+		info->size = FT_PRINTF_SIZE;
 		info->result = ft_strnew(info->size, 0);
 	}
 	info->width = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_fd_data.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 21:19:58 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 16:22:42 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 01:00:32 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ int				manage_fd_data(t_list **list, int fd, char **strp,
 	if (r == INPUT_ERROR || r == INPUT_END)
 	{
 		if (r == INPUT_END)
-			*strp = ft_strndup(fd_data->data, fd_data->data_len);
+			*strp = ft_strdup(fd_data->data);
 		ft_lstdel_el(list, element, fd_data_deleter);
 		return (r);
 	}
 	*strp = ft_strndup(fd_data->data, sep_pos);
 	tmp = fd_data->data;
 	sep_pos = sep_pos + ft_strlen(sep);
-	fd_data->data = ft_strsub(fd_data->data, sep_pos,
-					fd_data->data_len - sep_pos);
+	fd_data->data = ft_strdup(&fd_data->data[sep_pos]);
 	free(tmp);
 	return (INPUT_OK);
 }

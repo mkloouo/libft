@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   tests_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/30 17:51:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 00:21:22 by modnosum         ###   ########.fr       */
+/*   Created: 2018/10/06 23:19:56 by modnosum          #+#    #+#             */
+/*   Updated: 2018/10/07 00:19:59 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft/string.h>
+#include <ft/io.h>
+#include <stdlib.h>
 
-char		*ft_strsub(const char* s, size_t start,
-			size_t len)
+int main(int ac, char **av)
 {
-	char	*str;
-	int		i;
-
-	str = ft_strnew(len, 0);
-	if (str && s)
+	char *line = 0;
+	int fd = IO_STDIN;
+	if (ac > 1)
 	{
-		i = 0;
-		while (len > 0)
+		fd = ft_open_file(av[1], FILE_READ);
+		if (fd == -1)
 		{
-			str[i] = s[start + i];
-			i++;
-			len--;
+			ft_dprintf(IO_STDERR, "%s: invalid file %s\n", av[0], av[1]);
+			exit(1);
 		}
 	}
-	return (str);
+
+	while (ft_get_string(fd, &line, 0) > 0) {
+		ft_printf("%s\n", line);
+		free(line);
+	}
+	ft_printf("%s\n", line);
+	free(line);
+
+	return (0);
 }

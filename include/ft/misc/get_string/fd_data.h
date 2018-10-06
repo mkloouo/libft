@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fd_data.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 21:18:22 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 16:22:06 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 00:23:00 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct	s_fd_data
 {
 	int			fd;
 	char		*data;
-	size_t		data_len;
 }				t_fd_data;
 
 int				manage_fd_data(t_list **list, int fd, char **strp,

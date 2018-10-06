@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 17:59:11 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:28:48 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 00:54:40 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 char					*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t				s1_len;
-	size_t				s2_len;
+	size_t				len1;
+	size_t				len2;
 	char				*str;
 
-	if (!s1 && !s2)
-		return (0);
-	s1_len = s1 ? ft_strlen(s1) : 0;
-	s2_len = s2 ? ft_strlen(s2) : 0;
-	str = ft_strnew(s1_len + s2_len, 0);
-	if (str)
+	str = 0;
+	if (s1 && s2)
 	{
-		ft_strncpy(str, s1, s1_len);
-		ft_strncpy((str + s1_len), s2, s2_len);
+		len1 = ft_strlen(s1);
+		len2 = ft_strlen(s2);
+		str = ft_strnew(len1 + len2, 0);
+		if (str) {
+			ft_strncpy(str, s1, len1);
+			ft_strncpy(&str[len1], s2, len2);
+		}
 	}
 	return (str);
 }

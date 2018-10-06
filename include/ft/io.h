@@ -32,6 +32,7 @@
 # define INPUT_ERROR -1
 
 # define PRINTF_ERROR -1
+# define FT_PRINTF_SIZE 4096
 
 # if defined (_WIN32) || defined (_WIN64)
 #  define LINE_BREAK "\r\n"
@@ -44,7 +45,7 @@
 */
 
 int		ft_printf(char const *fmt, ...);
-int		ft_fdprintf(int fd, const char *fmt, ...);
+int		ft_dprintf(int fd, const char* fmt, ...);
 int		ft_sprintf(char **dst, char const *fmt, ...);
 int		ft_vsprintf(char **dst, char const *fmt, va_list *args);
 

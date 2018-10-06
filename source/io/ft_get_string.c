@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_string.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 18:01:36 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/11 22:26:19 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 01:03:01 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <ft/list.h>
 #include <ft/misc/get_string/fd_data.h>
+#include <ft/string.h>
 
 int					ft_get_string(int fd, char **strp, char const *sep)
 {
@@ -24,7 +25,7 @@ int					ft_get_string(int fd, char **strp, char const *sep)
 	if (sep == 0)
 		sep = LINE_BREAK;
 	if (fd_list == 0)
-		fd_list = ft_lstnew(&((t_fd_data){.fd = fd, .data = 0}),
+		fd_list = ft_lstnew(&((t_fd_data){.fd = fd, .data = ft_strnew(0, 0)}),
 					sizeof(t_fd_data));
 	return (manage_fd_data(&fd_list, fd, strp, sep));
 }
