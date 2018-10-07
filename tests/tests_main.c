@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 23:19:56 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 00:19:59 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 17:25:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,5 @@ int main(int ac, char **av)
 		ft_printf("%s\n", line);
 		free(line);
 	}
-	ft_printf("%s\n", line);
-	free(line);
-
 	return (0);
 }
