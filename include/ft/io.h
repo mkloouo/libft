@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   io.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:38:52 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:42:34 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 20:18:08 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 # define IO_STDIN STDIN_FILENO
 # define IO_STDOUT STDOUT_FILENO
@@ -25,7 +26,6 @@
 # define FILE_WRITE 2
 # define FILE_RW 3
 
-# define FD_SIZE 50000
 # define BUFF_SIZE 32
 # define INPUT_OK 1
 # define INPUT_END 0

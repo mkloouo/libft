@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 16:21:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 17:41:36 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 20:40:47 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,30 @@
 #include <ft/string.h>
 #include <ft/memory.h>
 
-int			read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
-			size_t *sep_pos)
+static int		store_sep_pos(char const *data, char const *sep, size_t *sep_pos,
+				char const *already_found)
 {
-	char	buffer[BUFF_SIZE + 1];
-	char	*tmp;
-	ssize_t	rd;
+	char const	*sep_occ;
+
+	if (already_found)
+		sep_occ = already_found;
+	else
+		sep_occ = ft_strstr(data, sep);
+	if (sep_occ)
+		*sep_pos = sep_occ - data;
+	return (sep_occ != 0);
+}
+
+int				read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
+				size_t *sep_pos)
+{
+	char		buffer[BUFF_SIZE + 1];
+	char		*tmp;
+	ssize_t		rd;
 
 	tmp = 0;
+	if (fd_data->left != 0)
+		return (store_sep_pos(fd_data->data, sep, sep_pos, 0));
 	while ((rd = read(fd_data->fd, buffer, BUFF_SIZE)) > 0)
 	{
 		buffer[rd] = 0;
@@ -34,9 +50,7 @@ int			read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
 		if ((tmp = (char *)ft_strstr(fd_data->data, sep)))
 			break ;
 	}
-	if (!tmp)
-		tmp = (char *)ft_strstr(fd_data->data, sep);
-	if (tmp)
-		*sep_pos = tmp - fd_data->data;
-	return ((int)rd);
+	if (rd < 0)
+		return ((int)rd);
+	return (store_sep_pos(fd_data->data, sep, sep_pos, tmp));
 }

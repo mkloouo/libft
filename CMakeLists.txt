@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(ft C)
 
 set(CMAKE_C_STANDARD 11)
+set(FT_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include/" PARENT_SCOPE)
 
 add_library(${PROJECT_NAME} SHARED
 		source/char/ft_isalnum.c
