@@ -6,32 +6,39 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 22:36:10 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 01:03:36 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 16:33:12 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/misc/get_string/fd_data.h>
-#include <ft/string.h>
 
-t_list			*manage_find_fd_data(t_list *list, int fd)
+#include <ft/string.h>
+#include <ft/memory.h>
+
+t_fd_data		*manage_find_fd_data(t_fd_data **fds, int fd)
 {
+	t_fd_data	*cur;
 	t_fd_data	*fd_data;
 
-	fd_data = 0;
-	while (list)
+	cur = *fds;
+	while (*fds && (*fds)->fd != fd)
+		(*fds) = (*fds)->next;
+	if ((fd_data = *fds))
+		*fds = cur;
+	else
 	{
-		if (((t_fd_data*)(list->data))->fd == fd)
+		fd_data = malloc(sizeof(t_fd_data));
+		fd_data->fd = fd;
+		fd_data->data = ft_strnew(0, 0);
+		fd_data->left = 0;
+		fd_data->next = 0;
+		if (!cur)
+			*fds = fd_data;
+		else
 		{
-			fd_data = (t_fd_data*)(list->data);
-			break ;
+			(*fds)->next = fd_data;
+			*fds = cur;
 		}
-		list = list->next;
 	}
-	if (fd_data == 0 && list)
-	{
-		list->next = ft_lstnew(&((t_fd_data){.fd = fd, .data = ft_strnew(0, 0)}),
-				sizeof(t_fd_data));
-		list = list->next;
-	}
-	return (list);
+	return (fd_data);
 }

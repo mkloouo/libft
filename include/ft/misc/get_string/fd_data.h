@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 21:18:22 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 00:23:00 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 16:09:37 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 
 # include <ft/list.h>
 
-typedef struct	s_fd_data
+typedef struct			s_fd_data
 {
-	int			fd;
-	char		*data;
-}				t_fd_data;
+	int					fd;
+	size_t				left;
+	char				*data;
+	struct s_fd_data	*next;
+}						t_fd_data;
 
-int				manage_fd_data(t_list **list, int fd, char **strp,
+int				manage_fd_data(t_fd_data **fds, int fd, char **strp,
 				char const *sep);
 
-t_list			*manage_find_fd_data(t_list *list, int fd);
+t_fd_data		*manage_find_fd_data(t_fd_data **fds, int fd);
 int				read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
 				size_t *sep_pos);
-void			fd_data_deleter(void *data, size_t size);
+
+
 
 #endif
