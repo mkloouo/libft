@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 13:14:51 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/02 20:18:30 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 02:27:04 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ char					*ft_strncpy(char *dst, const char *src, size_t len)
 		len--;
 	}
 	while (len > 0)
+	{
 		*s++ = 0;
+		--len;
+	}
 	return (dst);
 }

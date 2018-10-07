@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:43:34 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:44:53 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 02:46:33 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ char const				*ft_strchr(char const *str, char c);
 char const				*ft_strrchr(char const *str, char c);
 
 t_bool					ft_str_is_digits(char const *str);
+
+char const				*ft_strstarts(char const *str, char const *start);
+char const				*ft_strends(char const *str, char const *end);
 
 /*
 ** Count @c/@s occurences in @str

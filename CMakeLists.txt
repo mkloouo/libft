@@ -103,7 +103,7 @@ add_library(${PROJECT_NAME} SHARED
         source/string/ft_strtrim.c
         source/string/ft_wstrclen.c
         source/string/ft_wstrlen.c
-        source/string/ft_wstrncpy.c)
+        source/string/ft_wstrncpy.c source/string/ft_strstarts.c source/string/ft_strends.c)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 add_subdirectory(tests)
