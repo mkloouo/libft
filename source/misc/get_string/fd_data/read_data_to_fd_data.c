@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 16:21:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 16:41:58 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 16:44:27 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #include <ft/string.h>
 #include <ft/memory.h>
 
-int				read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
-				size_t *sep_pos)
+int			read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
+			size_t *sep_pos)
 {
-	char buffer[BUFF_SIZE + 1];
-	char *tmp;
-	ssize_t rd;
+	char	buffer[BUFF_SIZE + 1];
+	char	*tmp;
+	ssize_t	rd;
 
 	while ((rd = read(fd_data->fd, buffer, BUFF_SIZE)) > 0)
 	{

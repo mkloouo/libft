@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dprintf.c                                      :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/07 17:48:22 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:45:28 by modnosum         ###   ########.fr       */
+/*   Created: 2018/10/07 17:07:00 by modnosum          #+#    #+#             */
+/*   Updated: 2018/10/07 17:07:01 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <ft/memory.h>
 
-int			ft_dprintf(int fd, const char* fmt, ...)
+int			ft_dprintf(int fd, const char *fmt, ...)
 {
 	int		ret;
 	va_list	args;

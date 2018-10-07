@@ -57,7 +57,7 @@ size_t					ft_strcs(char const *str, char const *s);
 
 char					*ft_strrev(char *str);
 
-char					*ft_strsub(const char* s, size_t start,
+char					*ft_strsub(const char *s, size_t start,
 						size_t len);
 char					*ft_strjoin(const char *s1, const char *s2);
 char					*ft_strtrim(const char *s);

@@ -6,14 +6,13 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 17:51:31 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 00:21:22 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/07 17:09:07 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/string.h>
 
-char		*ft_strsub(const char* s, size_t start,
-			size_t len)
+char		*ft_strsub(const char *s, size_t start, size_t len)
 {
 	char	*str;
 	int		i;

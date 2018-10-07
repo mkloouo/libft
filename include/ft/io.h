@@ -45,7 +45,7 @@
 */
 
 int		ft_printf(char const *fmt, ...);
-int		ft_dprintf(int fd, const char* fmt, ...);
+int		ft_dprintf(int fd, const char *fmt, ...);
 int		ft_sprintf(char **dst, char const *fmt, ...);
 int		ft_vsprintf(char **dst, char const *fmt, va_list *args);
 

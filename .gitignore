@@ -1,6 +1,6 @@
-.vscode/
-.idea/
-build/
+.vscode
+.idea
+build
 *.a
 *.o
 *.so

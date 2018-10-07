@@ -22,7 +22,7 @@ add_library(${PROJECT_NAME} SHARED
 		source/conv/ft_strtoi.c
 		source/conv/ft_strtoli.c
 		source/io/ft_close_file.c
-		source/io/ft_fdprintf.c
+		source/io/ft_dprintf.c
 		source/io/ft_get_float.c
 		source/io/ft_get_int.c
 		source/io/ft_get_line_count.c
