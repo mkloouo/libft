@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strequ_ic.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/30 15:56:48 by modnosum          #+#    #+#             */
-/*   Updated: 2018/03/13 18:56:50 by modnosum         ###   ########.fr       */
+/*   Created: 2018/10/13 14:05:06 by modnosum          #+#    #+#             */
+/*   Updated: 2018/10/13 14:07:28 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/string.h>
 
-int	ft_strequ(const char *s1, const char *s2)
+#include <ft/char.h>
+
+int			ft_strequ_ic(const char *s1, const char *s2)
 {
-	if (s1 && s2)
-		return (ft_strcmp(s1, s2) == 0);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	while (ft_tolower(s1[i]) == ft_tolower(s2[i]) && s1[i])
+		++i;
+	return (ft_tolower(s1[i]) == ft_tolower(s2[i]));
 }

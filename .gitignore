@@ -1,6 +1,7 @@
 .vscode
 .idea
-build
+build*
+cmake-build*
 *.a
 *.o
 *.so

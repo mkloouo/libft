@@ -2,10 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 project(ft C)
 
 set(CMAKE_C_STANDARD 11)
-set(FT_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include/" PARENT_SCOPE)
-
-add_library(${PROJECT_NAME} SHARED
-		source/char/ft_isalnum.c
+set(ft_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" PARENT_SCOPE)
+set(ft_SOURCES source/char/ft_isalnum.c
 		source/char/ft_isalpha.c
 		source/char/ft_isascii.c
 		source/char/ft_isdigit.c
@@ -105,7 +103,12 @@ add_library(${PROJECT_NAME} SHARED
 		source/string/ft_strtrim.c
 		source/string/ft_wstrclen.c
 		source/string/ft_wstrlen.c
-		source/string/ft_wstrncpy.c)
+		source/string/ft_wstrncpy.c
+		source/string/ft_strequ_ic.c
+		source/string/ft_strnequ_ic.c
+		source/string/ft_toupper_s.c)
+
+add_library(${PROJECT_NAME} SHARED ${ft_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 add_subdirectory(tests)

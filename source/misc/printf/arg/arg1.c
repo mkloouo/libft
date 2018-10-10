@@ -18,7 +18,8 @@ void			manage_arg(va_list *args, t_info *info)
 	if (info->specifier == 's' || info->specifier == 'c')
 		manage_letters(args, info);
 	else if (info->specifier == 'u' || info->specifier == 'o' ||
-				info->specifier == 'x' || info->specifier == 'X')
+				info->specifier == 'x' || info->specifier == 'X' ||
+				info->specifier == 'b')
 		manage_unsigned(args, info);
 	else if (info->specifier == 'd')
 		manage_signed(args, info);

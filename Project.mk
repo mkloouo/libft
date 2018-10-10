@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Project.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
+#    By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/09/08 15:08:12 by modnosum         ###   ########.fr        #
+#    Updated: 2018/10/12 19:19:03 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ libft_OBJ_DIR	:= $(libft_PATH)/build
 
 libft_NAME		:= $(libft_PATH)/libft.$(libft_LIB_EXT)
 
-libft_DEPS		:= $(shell find $(libft_PATH)/$(libft_SRC_DIR) -type f -name *.$(libft_SRC_EXT))
-libft_DEPS		+= $(shell find $(libft_PATH)/$(libft_INC_DIR) -type f -name *.$(libft_INC_EXT))
+libft_DEPS		:= $(shell find $(libft_SRC_DIR) -type f -name *.$(libft_SRC_EXT))
+libft_DEPS		+= $(shell find $(libft_INC_DIR) -type f -name *.$(libft_INC_EXT))
 
-IFLAGS			+= -I$(libft_INC_DIR)
-LFLAGS			+= -L$(libft_PATH) -lft
+IFLAGS			+= -I $(libft_INC_DIR)
+LFLAGS			+= -L $(libft_PATH) -l ft
 
 RESET_COLOR		?= \e[0m
 CLEAN_COLOR		?= \e[35m

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 20:47:45 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/07 16:31:08 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/14 17:21:36 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ int				parse_specifier(char const **fmt, t_info *info)
 {
 	char		test;
 
-	test = (**fmt >= 'A' && **fmt <= 'Z') ? (**fmt + ('a' - 'A'))
-										: (**fmt);
+	test = (char)((**fmt >= 'A' && **fmt <= 'Z') ? (**fmt + ('a' - 'A'))
+										: (**fmt));
 	if (!(test == 's' || test == 'c' || test == 'u' || test == 'o' ||
 		test == 'x' || test == 'i' || test == 'd' || test == 'p' ||
-		test == '%'))
+		test == '%' || test == 'b'))
 		return (0);
 	if (**fmt == 'S' || **fmt == 'C' || **fmt == 'U' || **fmt == 'O' ||
 		**fmt == 'D')

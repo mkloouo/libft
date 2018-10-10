@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 22:36:10 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 16:33:12 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/10 23:42:57 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_fd_data		*manage_find_fd_data(t_fd_data **fds, int fd)
 		fd_data->data = ft_strnew(0, 0);
 		fd_data->left = 0;
 		fd_data->next = 0;
-		if (!cur)
+		if (*fds == 0)
 			*fds = fd_data;
 		else
 		{

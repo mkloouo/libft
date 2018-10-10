@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg3.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:49:07 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:49:15 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/14 17:22:43 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,7 @@ void			manage_unsigned(va_list *args, t_info *info)
 	else if (info->specifier == 'x' || info->specifier == 'X')
 		base_chars = ((info->specifier == 'x') ? ("0123456789abcdef")
 											: ("0123456789ABCDEF"));
+	else
+		base_chars = "01";
 	form_unsigned(info, base_chars);
 }

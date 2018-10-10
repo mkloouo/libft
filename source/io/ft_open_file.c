@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_open_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 17:17:50 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 17:09:52 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/11 19:44:52 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <sys/stat.h>
 
 #define CREATE_FLAG (O_CREAT | O_TRUNC)
-#define ACCESS_EVERYTHING_MODE (S_IRWXU | S_IRWXG | S_IRWXO)
+#define COMM_MODE (S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH | S_IRUSR | S_IWUSR)
 
 int		ft_open_file(const char *file, int mode)
 {
@@ -25,9 +25,9 @@ int		ft_open_file(const char *file, int mode)
 	if (mode == FILE_READ)
 		fd = open(file, O_RDONLY);
 	else if (mode == FILE_WRITE)
-		fd = open(file, (O_WRONLY | CREATE_FLAG), ACCESS_EVERYTHING_MODE);
+		fd = open(file, (O_WRONLY | CREATE_FLAG), COMM_MODE);
 	else if (mode == FILE_RW)
-		fd = open(file, (O_RDWR | CREATE_FLAG), ACCESS_EVERYTHING_MODE);
+		fd = open(file, (O_RDWR | CREATE_FLAG), COMM_MODE);
 	else
 		fd = -1;
 	return (fd);

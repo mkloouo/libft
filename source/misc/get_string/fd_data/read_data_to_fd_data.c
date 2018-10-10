@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 16:21:30 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 20:40:47 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/11 00:06:29 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <ft/string.h>
 #include <ft/memory.h>
 
-static int		store_sep_pos(char const *data, char const *sep, size_t *sep_pos,
-				char const *already_found)
+static int		store_sep_pos(char const *data, char const *sep,
+				size_t *sep_pos, char const *already_found)
 {
 	char const	*sep_occ;
 
@@ -38,7 +38,7 @@ int				read_data_to_fd_data(t_fd_data *fd_data, char const *sep,
 	ssize_t		rd;
 
 	tmp = 0;
-	if (fd_data->left != 0)
+	if (fd_data->left != 0 && ft_strstr(fd_data->data, sep))
 		return (store_sep_pos(fd_data->data, sep, sep_pos, 0));
 	while ((rd = read(fd_data->fd, buffer, BUFF_SIZE)) > 0)
 	{
