@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/20 14:45:46 by modnosum          #+#    #+#              #
-#    Updated: 2018/10/16 23:21:17 by modnosum         ###   ########.fr        #
+#    Updated: 2018/10/17 01:46:30 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,3 @@ libft_DEPS		+= $(shell find $(libft_INC_DIR) -type f \
 
 IFLAGS			+= -I $(libft_INC_DIR)
 LFLAGS			+= -L $(libft_PATH) -l ft
-
-RESET_COLOR		?= \e[0m
-CLEAN_COLOR		?= \e[35m
-CREATE_COLOR	?= \e[32m
-FINISH_COLOR	?= \e[36m
-
-REMOVED_FILE	?= @printf "$(CLEAN_COLOR)%50s\n$(RESET_COLOR)" "Removed $(1)"
-CREATED_FILE	?= @printf "$(CREATE_COLOR)%-50s$(RESET_COLOR) -> %s\n" $(1) $(2)
-FINISHED_FILE	?= @printf "$(FINISH_COLOR)%50s\n$(RESET_COLOR)" "Built $(1)"

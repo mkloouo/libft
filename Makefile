@@ -6,7 +6,7 @@
 #    By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/16 20:46:58 by modnosum          #+#    #+#              #
-#    Updated: 2018/09/21 15:37:34 by modnosum         ###   ########.fr        #
+#    Updated: 2018/10/17 01:49:29 by modnosum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,44 +26,33 @@ CFLAGS		:= -Wall -Werror -Wextra -pedantic -g
 AR			:= ar
 ARFLAGS		:= -crs
 
-IS_NORM_ENABLED	:= $(shell command -v norminette)
-
 SRCS		:= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
 OBJS		:= $(patsubst $(SRC_DIR)%.$(SRC_EXT),$(OBJ_DIR)%.$(OBJ_EXT),$(SRCS))
 DIRS		:= $(sort $(dir $(OBJS)))
 
 .MAIN: all
-.PHONY: all clean fclean re c f test
+.PHONY: all clean fclean re c f
 
 all: $(NAME)
 c: clean
 clean:
 	@rm -fr $(OBJ_DIR)
-	@rm -fr test
-	@$(call REMOVED_FILE,$(OBJ_DIR))
+	@echo "Removed libft build directory."
 f: fclean
 fclean: clean
 	@rm -fr $(NAME)
-	@$(call REMOVED_FILE,$(NAME))
+	@echo "Removed libft library files."
 re: fclean all
-test: test.c | $(NAME)
-	$(CC) -o $@ $(CFLAGS) $(IFLAGS) $< $(LFLAGS)
-
-n: norm
-norm:
-ifeq (,$(IS_NORM_ENABLED))
-	@echo "no norminette on your pc"
-else
-	@find . -type f -name "*.[ch]" -exec norminette {} \+
-endif
 
 $(OBJ_DIR):
 	@mkdir -p $(DIRS)
+	@echo "Created libft build directory."
 
 $(OBJ_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT) | $(OBJ_DIR)
 	@$(CC) -o $@ -c $< $(IFLAGS) $(CFLAGS)
-	@$(call CREATED_FILE,$@,$<);
 
 $(NAME): $(OBJS)
+	@echo "Finished compiling libft object files."
 	@$(AR) $(ARFLAGS) $@ $^
-	@$(call FINISHED_FILE,$@);
+	@echo "Finished libft."
+
