@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   io.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
+/*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:38:52 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/07 20:18:08 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/16 23:27:31 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_open_file(const char *file, int mode);
 int		ft_close_file(int fd);
 int		ft_get_line_count(const char *file);
+
+char	*ft_readfd(int fd);
 
 #endif
