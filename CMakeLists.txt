@@ -4,6 +4,7 @@ project(ft C)
 set(CMAKE_C_STANDARD 11)
 set(ft_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include" PARENT_SCOPE)
 set(ft_SOURCES source/char/ft_isalnum.c
+		source/char/ft_isalnum.c
 		source/char/ft_isalpha.c
 		source/char/ft_isascii.c
 		source/char/ft_isdigit.c
@@ -38,6 +39,7 @@ set(ft_SOURCES source/char/ft_isalnum.c
 		source/io/ft_putnstr_fd.c
 		source/io/ft_putstr.c
 		source/io/ft_putstr_fd.c
+		source/io/ft_readfd.c
 		source/io/ft_sprintf.c
 		source/io/ft_vsprintf.c
 		source/list/ft_lstadd.c
@@ -47,7 +49,8 @@ set(ft_SOURCES source/char/ft_isalnum.c
 		source/list/ft_lstnew.c
 		source/list/ft_lstsize.c
 		source/memory/ft_common_deleter.c
-		source/memory/ft_memncpy.c
+		source/memory/ft_memcpy.c
+		source/memory/ft_memset.c
 		source/misc/get_string/fd_data/manage_fd_data.c
 		source/misc/get_string/fd_data/manage_find_fd_data.c
 		source/misc/get_string/fd_data/read_data_to_fd_data.c
@@ -84,6 +87,7 @@ set(ft_SOURCES source/char/ft_isalnum.c
 		source/string/ft_strdup.c
 		source/string/ft_strends.c
 		source/string/ft_strequ.c
+		source/string/ft_strequ_ic.c
 		source/string/ft_strfill.c
 		source/string/ft_strjoin.c
 		source/string/ft_strlcat.c
@@ -93,6 +97,7 @@ set(ft_SOURCES source/char/ft_isalnum.c
 		source/string/ft_strncpy.c
 		source/string/ft_strndup.c
 		source/string/ft_strnequ.c
+		source/string/ft_strnequ_ic.c
 		source/string/ft_strnew.c
 		source/string/ft_strnstr.c
 		source/string/ft_strrchr.c
@@ -101,12 +106,10 @@ set(ft_SOURCES source/char/ft_isalnum.c
 		source/string/ft_strstr.c
 		source/string/ft_strsub.c
 		source/string/ft_strtrim.c
+		source/string/ft_toupper_s.c
 		source/string/ft_wstrclen.c
 		source/string/ft_wstrlen.c
-		source/string/ft_wstrncpy.c
-		source/string/ft_strequ_ic.c
-		source/string/ft_strnequ_ic.c
-		source/string/ft_toupper_s.c)
+		source/string/ft_wstrncpy.c)
 
 add_library(${PROJECT_NAME} SHARED ${ft_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
