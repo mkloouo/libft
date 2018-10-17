@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 20:55:55 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/09 20:57:55 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/17 05:10:13 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list		*ft_lstnew(void *data, size_t size)
 	if (data && size)
 	{
 		l->data = malloc(size);
-		ft_memncpy(l->data, data, size);
+		ft_memcpy(l->data, data, size);
 		l->size = size;
 	}
 	return (l);

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/08 15:49:48 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/08 15:50:43 by modnosum         ###   ########.fr       */
+/*   Created: 2018/10/17 04:46:25 by modnosum          #+#    #+#             */
+/*   Updated: 2018/10/17 04:47:41 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft/memory.h>
 
-void		*ft_memncpy(void *dst, void *src, size_t n)
+void				*ft_memset(void *ptr, int c, size_t n)
 {
-	char	*d;
-	char	*s;
+	unsigned char	*p;
 
-	d = (char*)dst;
-	s = (char*)src;
-	while (n)
-	{
-		*d++ = *s++;
-		--n;
-	}
-	return (dst);
+	p = (unsigned char*)ptr;
+	while (n--)
+		*p++ = (unsigned char)c;
+	return (ptr);
 }

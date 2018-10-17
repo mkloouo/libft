@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 15:53:40 by modnosum          #+#    #+#             */
-/*   Updated: 2018/09/21 15:51:40 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/17 05:10:15 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack_element				*ft_create_stack_element(void *data, size_t size)
 	{
 		new_element->data = malloc(sizeof(char) * size);
 		new_element->size = size;
-		ft_memncpy(new_element->data, data, size);
+		ft_memcpy(new_element->data, data, size);
 	}
 	new_element->next = 0;
 	new_element->prev = 0;
