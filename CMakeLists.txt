@@ -110,5 +110,3 @@ set(ft_SOURCES source/char/ft_isalnum.c
 
 add_library(${PROJECT_NAME} SHARED ${ft_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
-
-add_subdirectory(tests)
