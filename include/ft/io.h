@@ -6,7 +6,7 @@
 /*   By: modnosum <modnosum@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:38:52 by modnosum          #+#    #+#             */
-/*   Updated: 2018/10/18 01:11:20 by modnosum         ###   ########.fr       */
+/*   Updated: 2018/10/19 03:29:19 by modnosum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ int		ft_open_file(const char *file, int mode);
 int		ft_close_file(int fd);
 int		ft_get_line_count(const char *file);
 
-char	*ft_readfd(int fd);
+char	*ft_readfd(int fd, size_t *len);
 
 #endif
